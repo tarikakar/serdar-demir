@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ritim Bozukluğu Nedir? | Doç. Dr. Serdar Demir</title>
+
+    <meta
+        name="description"
+        content="Kalp ritim bozuklukları, belirtileri, değerlendirme yöntemleri ve ne zaman kardiyoloji değerlendirmesi gerektiği hakkında genel bilgilendirme."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ==========================================
+           ARTICLE PAGE
+        ========================================== */
+
+        .article-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 95px 0 80px;
+            background:
+                radial-gradient(
+                    circle at 80% 40%,
+                    rgba(185, 218, 235, 0.55),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    110deg,
+                    #eef6fa 0%,
+                    #f9fbfc 55%,
+                    #e7f1f6 100%
+                );
+        }
+
+        .article-hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .article-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: #718a9a;
+        }
+
+        .article-breadcrumb a {
+            transition: color 0.2s ease;
+        }
+
+        .article-breadcrumb a:hover {
+            color: var(--navy);
+        }
+
+        .article-hero h1 {
+            max-width: 700px;
+            font-family: var(--serif);
+            font-size: clamp(52px, 6vw, 82px);
+            font-weight: 400;
+            line-height: 0.98;
+            letter-spacing: -2px;
+            color: var(--navy);
+        }
+
+        .article-lead {
+            max-width: 620px;
+            margin-top: 25px;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #496477;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .article-meta span {
+            padding: 9px 14px;
+            border: 1px solid rgba(8, 42, 69, 0.08);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.72);
+            font-size: 9px;
+            font-weight: 600;
+            color: #526d80;
+        }
+
+        /* ECG VISUAL */
+
+        .article-visual {
+            position: relative;
+            min-height: 360px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .article-visual-circle {
+            position: absolute;
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255, 255, 255, 0.95),
+                    rgba(218, 236, 245, 0.55) 58%,
+                    transparent 70%
+                );
+        }
+
+        .article-heart {
+            position: relative;
+            z-index: 2;
+            font-size: 180px;
+            line-height: 1;
+            color: #b85359;
+            opacity: 0.9;
+            text-shadow:
+                0 20px 40px rgba(108, 52, 57, 0.15);
+        }
+
+        .article-ecg {
+            position: absolute;
+            z-index: 3;
+            width: 110%;
+            height: 120px;
+        }
+
+        .article-ecg path {
+            fill: none;
+            stroke: #174e72;
+            stroke-width: 3;
+            filter:
+                drop-shadow(
+                    0 0 4px rgba(54, 130, 177, 0.25)
+                );
+        }
+
+        /* ARTICLE BODY */
+
+        .article-section {
+            padding: 90px 0;
+            background: #ffffff;
+        }
+
+        .article-layout {
+            display: grid;
+            grid-template-columns: 250px minmax(0, 720px);
+            gap: 75px;
+            justify-content: center;
+            align-items: start;
+        }
+
+        /* SIDEBAR */
+
+        .article-sidebar {
+            position: sticky;
+            top: 110px;
+        }
+
+        .article-sidebar-label {
+            margin-bottom: 17px;
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #8395a1;
+        }
+
+        .article-sidebar nav {
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid var(--border);
+        }
+
+        .article-sidebar nav a {
+            padding: 13px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 10px;
+            color: #607887;
+            transition:
+                color 0.2s ease,
+                padding-left 0.2s ease;
+        }
+
+        .article-sidebar nav a:hover {
+            padding-left: 5px;
+            color: var(--navy);
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 25px;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* CONTENT */
+
+        .article-content {
+            min-width: 0;
+        }
+
+        .article-content-block {
+            padding-bottom: 50px;
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .article-content-block:last-child {
+            border-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .article-content h2 {
+            margin-bottom: 20px;
+            font-family: var(--serif);
+            font-size: clamp(32px, 3.5vw, 46px);
+            font-weight: 400;
+            line-height: 1.08;
+            color: var(--navy);
+        }
+
+        .article-content h3 {
+            margin: 28px 0 10px;
+            font-family: var(--serif);
+            font-size: 23px;
+            font-weight: 400;
+            color: var(--navy);
+        }
+
+        .article-content p {
+            margin-bottom: 17px;
+            font-size: 14px;
+            line-height: 1.9;
+            color: #4f6676;
+        }
+
+        .article-content ul {
+            display: grid;
+            gap: 10px;
+            margin: 20px 0 25px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .article-content li {
+            position: relative;
+            padding-left: 24px;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #4f6676;
+        }
+
+        .article-content li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #5b94b7;
+        }
+
+        /* INFO BOX */
+
+        .info-box {
+            margin: 30px 0;
+            padding: 27px 30px;
+            border-radius: 10px;
+            background: #eef6fa;
+            border-left: 3px solid #427ca1;
+        }
+
+        .info-box strong {
+            display: block;
+            margin-bottom: 8px;
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--navy);
+        }
+
+        .info-box p {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        /* WARNING */
+
+        .warning-box {
+            margin-top: 30px;
+            padding: 28px 30px;
+            border-radius: 10px;
+            background: #fff5f3;
+            border: 1px solid #f0d8d4;
+        }
+
+        .warning-box span {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #b35b56;
+        }
+
+        .warning-box strong {
+            display: block;
+            margin-bottom: 10px;
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            color: #743c3a;
+        }
+
+        .warning-box p {
+            margin: 0;
+            color: #725652;
+        }
+
+        /* NEXT ARTICLES */
+
+        .next-articles {
+            padding: 75px 0;
+            background: #edf5f8;
+        }
+
+        .next-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .next-heading h2 {
+            font-family: var(--serif);
+            font-size: 40px;
+            font-weight: 400;
+            color: var(--navy);
+        }
+
+        .next-heading a {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .next-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .next-card {
+            position: relative;
+            min-height: 220px;
+            padding: 30px;
+            overflow: hidden;
+            border-radius: 10px;
+            background: white;
+            border: 1px solid rgba(8, 42, 69, 0.06);
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .next-card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 20px 40px rgba(10, 48, 73, 0.08);
+        }
+
+        .next-card small {
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #7290a2;
+        }
+
+        .next-card h3 {
+            max-width: 330px;
+            margin-top: 20px;
+            font-family: var(--serif);
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 1.05;
+            color: var(--navy);
+        }
+
+        .next-card p {
+            max-width: 400px;
+            margin-top: 12px;
+            font-size: 11px;
+            line-height: 1.6;
+            color: #687d8a;
+        }
+
+        .next-card-arrow {
+            position: absolute;
+            right: 30px;
+            bottom: 25px;
+            font-size: 22px;
+            color: var(--navy);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .article-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .article-visual {
+                min-height: 280px;
+            }
+
+            .article-layout {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .article-sidebar {
+                position: static;
+            }
+
+            .article-sidebar nav {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .next-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .article-hero {
+                padding: 65px 0 45px;
+            }
+
+            .article-hero h1 {
+                font-size: 50px;
+            }
+
+            .article-heart {
+                font-size: 145px;
+            }
+
+            .article-visual-circle {
+                width: 260px;
+                height: 260px;
+            }
+
+            .article-section {
+                padding: 65px 0;
+            }
+
+            .article-sidebar nav {
+                grid-template-columns: 1fr;
+            }
+
+            .article-content h2 {
+                font-size: 35px;
+            }
+
+            .next-heading {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .next-heading h2 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header" id="header">
+
+    <div class="header-inner">
+
+        <a href="index.html" class="brand">
+
+            <div class="brand-logo">
+                SD
+            </div>
+
+            <div class="brand-text">
+                <strong>Doç. Dr. Serdar Demir</strong>
+                <span>Kardiyoloji</span>
+            </div>
+
+        </a>
+
+
+        <nav class="nav" id="nav">
+
+            <a href="index.html">Ana Sayfa</a>
+            <a href="index.html#hakkimda">Hakkında</a>
+            <a href="index.html#uzmanlik">Uzmanlık Alanları</a>
+            <a href="index.html#akademik">Akademik</a>
+            <a href="index.html#bilgilendirme">Hasta Bilgilendirme</a>
+            <a href="index.html#iletisim">İletişim</a>
+
+        </nav>
+
+
+        <a
+            href="index.html#iletisim"
+            class="header-button"
+        >
+            İletişim / Kurum Bilgileri
+            <span>→</span>
+        </a>
+
+
+        <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Menüyü aç"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- ARTICLE HERO -->
+
+<section class="article-hero">
+
+    <div class="container article-hero-grid">
+
+
+        <div>
+
+            <div class="article-breadcrumb">
+
+                <a href="index.html">
+                    ANA SAYFA
+                </a>
+
+                <span>—</span>
+
+                <a href="index.html#bilgilendirme">
+                    HASTA BİLGİLENDİRME
+                </a>
+
+            </div>
+
+
+            <div class="section-label">
+                KALP RİTMİ
+            </div>
+
+
+            <h1>
+                Ritim bozukluğu nedir?
+            </h1>
+
+
+            <p class="article-lead">
+
+                Kalbin normal ritminden daha hızlı,
+                daha yavaş veya düzensiz çalışması
+                ritim bozukluğu olarak tanımlanabilir.
+                Aritmiler farklı mekanizmalara ve
+                farklı klinik özelliklere sahip olabilir.
+
+            </p>
+
+
+            <div class="article-meta">
+
+                <span>Hasta Bilgilendirme</span>
+                <span>Kardiyoloji</span>
+                <span>Elektrofizyoloji</span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="article-visual">
+
+            <div class="article-visual-circle"></div>
+
+            <div class="article-heart">
+                ♥
+            </div>
+
+
+            <svg
+                class="article-ecg"
+                viewBox="0 0 600 120"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+            >
+
+                <path
+                    d="
+                    M0 60
+                    L80 60
+                    L105 48
+                    L125 72
+                    L145 60
+                    L190 60
+                    L215 20
+                    L240 103
+                    L270 32
+                    L295 73
+                    L320 60
+                    L390 60
+                    L415 45
+                    L435 72
+                    L455 60
+                    L600 60
+                    "
+                />
+
+            </svg>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ARTICLE -->
+
+<section class="article-section">
+
+    <div class="container article-layout">
+
+
+        <!-- SOL MENÜ -->
+
+        <aside class="article-sidebar">
+
+            <div class="article-sidebar-label">
+                BU SAYFADA
+            </div>
+
+
+            <nav>
+
+                <a href="#nedir">
+                    Ritim bozukluğu nedir?
+                </a>
+
+                <a href="#belirtiler">
+                    Belirtileri nelerdir?
+                </a>
+
+                <a href="#turler">
+                    Ritim bozukluğu türleri
+                </a>
+
+                <a href="#tani">
+                    Nasıl değerlendirilir?
+                </a>
+
+                <a href="#tedavi">
+                    Tedavi yaklaşımı
+                </a>
+
+                <a href="#acil">
+                    Ne zaman acil?
+                </a>
+
+            </nav>
+
+
+            <a
+                href="index.html#bilgilendirme"
+                class="back-home"
+            >
+                ← Tüm içerikler
+            </a>
+
+        </aside>
+
+
+
+        <!-- İÇERİK -->
+
+        <article class="article-content">
+
+
+            <div
+                class="article-content-block"
+                id="nedir"
+            >
+
+                <div class="section-label">
+                    01
+                </div>
+
+                <h2>
+                    Ritim bozukluğu nedir?
+                </h2>
+
+                <p>
+
+                    Kalbin kasılmasını sağlayan elektriksel
+                    uyarılar belirli bir düzen içerisinde oluşur
+                    ve kalp dokusu boyunca iletilir. Bu elektriksel
+                    sistem kalbin hızını ve ritmini belirler.
+
+                </p>
+
+                <p>
+
+                    Elektriksel uyarının oluşması veya iletilmesi
+                    sırasında meydana gelen değişiklikler kalbin
+                    normalden hızlı, yavaş veya düzensiz
+                    çalışmasına neden olabilir. Bu durumlar genel
+                    olarak aritmi veya ritim bozukluğu olarak
+                    adlandırılır.
+
+                </p>
+
+
+                <div class="info-box">
+
+                    <strong>
+                        Her ritim bozukluğu aynı değildir.
+                    </strong>
+
+                    <p>
+
+                        Bazı aritmiler kısa süreli ve belirti
+                        vermeden seyredebilirken bazıları
+                        değerlendirme ve tedavi gerektirebilir.
+                        Bu nedenle aritminin türünün belirlenmesi
+                        önemlidir.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="article-content-block"
+                id="belirtiler"
+            >
+
+                <div class="section-label">
+                    02
+                </div>
+
+                <h2>
+                    Belirtileri nelerdir?
+                </h2>
+
+                <p>
+
+                    Ritim bozukluklarının oluşturduğu belirtiler
+                    kişiden kişiye ve aritminin türüne göre
+                    değişebilir.
+
+                </p>
+
+                <p>
+                    Görülebilecek yakınmalardan bazıları:
+                </p>
+
+
+                <ul>
+
+                    <li>
+                        Çarpıntı veya kalbin hızlı attığını hissetme
+                    </li>
+
+                    <li>
+                        Kalp atımlarının düzensiz olduğunu hissetme
+                    </li>
+
+                    <li>
+                        Baş dönmesi veya sersemlik
+                    </li>
+
+                    <li>
+                        Nefes darlığı
+                    </li>
+
+                    <li>
+                        Halsizlik veya egzersiz kapasitesinde azalma
+                    </li>
+
+                    <li>
+                        Göğüste rahatsızlık hissi
+                    </li>
+
+                    <li>
+                        Bayılma veya bayılacak gibi olma
+                    </li>
+
+                </ul>
+
+
+                <p>
+
+                    Bununla birlikte bazı ritim bozuklukları
+                    herhangi bir belirti oluşturmadan rutin
+                    muayene, EKG veya ritim kayıtları sırasında
+                    da saptanabilir.
+
+                </p>
+
+            </div>
+
+
+
+            <div
+                class="article-content-block"
+                id="turler"
+            >
+
+                <div class="section-label">
+                    03
+                </div>
+
+                <h2>
+                    Ritim bozukluğu türleri
+                </h2>
+
+
+                <h3>
+                    Taşikardiler
+                </h3>
+
+                <p>
+
+                    Kalp hızının beklenenden yüksek olduğu ritimlerdir.
+                    Taşikardinin kalbin hangi bölgesinden kaynaklandığı
+                    ve mekanizması tedavi yaklaşımını etkileyebilir.
+
+                </p>
+
+
+                <h3>
+                    Bradikardiler
+                </h3>
+
+                <p>
+
+                    Kalp hızının yavaş olduğu durumları ifade eder.
+                    Bazı kişilerde düşük kalp hızı normal olabilirken,
+                    bazı durumlarda kalbin elektriksel uyarı oluşturma
+                    veya iletim sistemindeki problemlerle ilişkili
+                    olabilir.
+
+                </p>
+
+
+                <h3>
+                    Atriyal fibrilasyon
+                </h3>
+
+                <p>
+
+                    Atriyal fibrilasyon, kalbin üst odacıklarında
+                    düzensiz elektriksel aktivitenin görüldüğü
+                    yaygın ritim bozukluklarından biridir.
+
+                </p>
+
+
+                <h3>
+                    Supraventriküler taşikardiler
+                </h3>
+
+                <p>
+
+                    Kalbin üst bölgelerinden kaynaklanan hızlı ritim
+                    bozukluklarıdır. Bazı SVT türlerinde ani başlayan
+                    ve ani sonlanan çarpıntı atakları görülebilir.
+
+                </p>
+
+
+                <h3>
+                    Ventriküler ritim bozuklukları
+                </h3>
+
+                <p>
+
+                    Kalbin alt odacıkları olan ventriküllerden
+                    kaynaklanan ritim bozukluklarıdır. Klinik önemleri
+                    ritmin türüne ve kişinin kalp hastalığına göre
+                    değişebilir.
+
+                </p>
+
+            </div>
+
+
+
+            <div
+                class="article-content-block"
+                id="tani"
+            >
+
+                <div class="section-label">
+                    04
+                </div>
+
+                <h2>
+                    Nasıl değerlendirilir?
+                </h2>
+
+                <p>
+
+                    Değerlendirmede kişinin yakınmaları, tıbbi
+                    öyküsü ve fizik muayene bulguları birlikte
+                    ele alınır.
+
+                </p>
+
+                <p>
+                    Gerektiğinde aşağıdaki yöntemlerden
+                    yararlanılabilir:
+                </p>
+
+
+                <ul>
+
+                    <li>
+                        12 derivasyonlu elektrokardiyografi (EKG)
+                    </li>
+
+                    <li>
+                        Holter veya daha uzun süreli ritim kaydı
+                    </li>
+
+                    <li>
+                        Ekokardiyografi
+                    </li>
+
+                    <li>
+                        Efor değerlendirmesi
+                    </li>
+
+                    <li>
+                        Kan tetkikleri
+                    </li>
+
+                    <li>
+                        Uygun hastalarda elektrofizyolojik çalışma
+                    </li>
+
+                </ul>
+
+
+                <div class="info-box">
+
+                    <strong>
+                        Ritim kaydı neden önemlidir?
+                    </strong>
+
+                    <p>
+
+                        Çarpıntı sırasında kalbin elektriksel
+                        aktivitesinin kaydedilmesi, yakınmanın
+                        gerçekten bir aritmi ile ilişkili olup
+                        olmadığının ve varsa ritmin türünün
+                        belirlenmesine yardımcı olabilir.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="article-content-block"
+                id="tedavi"
+            >
+
+                <div class="section-label">
+                    05
+                </div>
+
+                <h2>
+                    Tedavi yaklaşımı
+                </h2>
+
+                <p>
+
+                    Her ritim bozukluğu aynı tedaviyi gerektirmez.
+                    Tedavi kararı aritminin türüne, süresine,
+                    oluşturduğu belirtilere, eşlik eden kalp
+                    hastalıklarına ve kişinin genel klinik
+                    durumuna göre belirlenir.
+
+                </p>
+
+                <p>
+                    Uygun hastalarda yaklaşım seçenekleri arasında:
+                </p>
+
+
+                <ul>
+
+                    <li>
+                        Klinik takip
+                    </li>
+
+                    <li>
+                        İlaç tedavileri
+                    </li>
+
+                    <li>
+                        Kateter ablasyonu
+                    </li>
+
+                    <li>
+                        Kalp pili
+                    </li>
+
+                    <li>
+                        İmplante edilebilir kardiyak cihazlar
+                    </li>
+
+                </ul>
+
+
+                <p>
+
+                    Hangi yaklaşımın uygun olduğuna kardiyoloji
+                    değerlendirmesi sonucunda karar verilir.
+
+                </p>
+
+            </div>
+
+
+
+            <div
+                class="article-content-block"
+                id="acil"
+            >
+
+                <div class="section-label">
+                    06
+                </div>
+
+                <h2>
+                    Ne zaman acil değerlendirme gerekir?
+                </h2>
+
+                <p>
+
+                    Çarpıntı tek başına her zaman acil bir durum
+                    anlamına gelmez. Ancak bazı belirtilerin eşlik
+                    etmesi durumunda gecikmeden tıbbi değerlendirme
+                    gerekebilir.
+
+                </p>
+
+
+                <div class="warning-box">
+
+                    <span>
+                        ACİL DEĞERLENDİRME
+                    </span>
+
+                    <strong>
+                        Özellikle aşağıdaki durumlarda
+                        acil yardım alın.
+                    </strong>
+
+                    <p>
+
+                        Şiddetli veya devam eden göğüs ağrısı,
+                        belirgin nefes darlığı, bayılma,
+                        bilinç değişikliği veya ciddi genel durum
+                        bozukluğu ile birlikte gelişen çarpıntı
+                        durumunda acil sağlık hizmetlerine
+                        başvurulmalıdır.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="article-content-block">
+
+                <div class="section-label">
+                    BİLGİLENDİRME
+                </div>
+
+                <h2>
+                    Önemli not
+                </h2>
+
+                <p>
+
+                    Bu sayfadaki bilgiler genel sağlık
+                    bilgilendirmesi amacıyla hazırlanmıştır.
+                    Kişisel tanı veya tedavi önerisi niteliğinde
+                    değildir.
+
+                </p>
+
+                <p>
+
+                    Ritim bozukluğu şüphesi veya devam eden
+                    yakınmalarınız varsa kişisel değerlendirme
+                    için bir hekime başvurmanız gerekir.
+
+                </p>
+
+            </div>
+
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- DİĞER İÇERİKLER -->
+
+<section class="next-articles">
+
+    <div class="container">
+
+        <div class="next-heading">
+
+            <div>
+
+                <div class="section-label">
+                    HASTA BİLGİLENDİRME
+                </div>
+
+                <h2>
+                    Diğer içerikler
+                </h2>
+
+            </div>
+
+
+            <a href="index.html#bilgilendirme">
+                Tüm içerikler →
+            </a>
+
+        </div>
+
+
+        <div class="next-grid">
+
+
+            <a
+                href="ablasyon.html"
+                class="next-card"
+            >
+
+                <small>
+                    ELEKTROFİZYOLOJİ
+                </small>
+
+                <h3>
+                    Ablasyon nedir?
+                </h3>
+
+                <p>
+
+                    Kateter ablasyonunun ne olduğu,
+                    hangi amaçla uygulandığı ve
+                    işlem süreci hakkında temel bilgiler.
+
+                </p>
+
+                <span class="next-card-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="kalp-pili.html"
+                class="next-card"
+            >
+
+                <small>
+                    KARDİYAK CİHAZLAR
+                </small>
+
+                <h3>
+                    Kalp pili ile yaşam
+                </h3>
+
+                <p>
+
+                    Kalp pili sonrası günlük yaşam,
+                    kontroller ve dikkat edilmesi gereken
+                    konular hakkında genel bilgiler.
+
+                </p>
+
+                <span class="next-card-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+
+        <a href="index.html" class="footer-brand">
+
+            <div class="footer-logo">
+                SD
+            </div>
+
+            <div>
+
+                <strong>
+                    Doç. Dr. Serdar Demir
+                </strong>
+
+                <span>
+                    Kardiyoloji
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <nav class="footer-nav">
+
+            <a href="index.html">
+                Ana Sayfa
+            </a>
+
+            <a href="index.html#hakkimda">
+                Hakkında
+            </a>
+
+            <a href="index.html#uzmanlik">
+                Uzmanlık Alanları
+            </a>
+
+            <a href="index.html#akademik">
+                Akademik
+            </a>
+
+            <a href="index.html#bilgilendirme">
+                Hasta Bilgilendirme
+            </a>
+
+            <a href="index.html#iletisim">
+                İletişim
+            </a>
+
+        </nav>
+
+
+
+        <div class="footer-note">
+
+            <p>
+                © 2026 Doç. Dr. Serdar Demir
+            </p>
+
+            <p>
+
+                İçerikler genel bilgilendirme amaçlıdır.
+                Tanı veya tedavi önerisi değildir ve
+                hekim muayenesinin yerine geçmez.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

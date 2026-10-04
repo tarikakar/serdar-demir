@@ -1,0 +1,2474 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kalp Pili ile Yaşam | Doç. Dr. Serdar Demir</title>
+
+    <meta
+        name="description"
+        content="Kalp pili nedir, kimlere takılır, kalp pili takıldıktan sonra günlük yaşam, kontroller ve dikkat edilmesi gerekenler hakkında hasta bilgilendirme."
+    >
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Doç. Dr. Serdar Demir">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================================================
+           KALP PİLİ SAYFASI
+        ========================================================= */
+
+        .pacemaker-page {
+            background: #fff;
+        }
+
+        /* HERO */
+
+        .pm-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 90px 0 80px;
+
+            background:
+                radial-gradient(
+                    circle at 78% 40%,
+                    rgba(180, 214, 231, .65),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    115deg,
+                    #eef6fa 0%,
+                    #fbfcfd 52%,
+                    #e5f0f5 100%
+                );
+        }
+
+        .pm-hero::before {
+            content: "";
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            right: -120px;
+            top: -250px;
+            border-radius: 50%;
+            border: 1px solid rgba(9, 41, 68, .06);
+        }
+
+        .pm-hero-grid {
+            position: relative;
+            z-index: 2;
+
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 9px;
+
+            margin-bottom: 31px;
+
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+
+            color: #718695;
+        }
+
+        .breadcrumb a {
+            transition: color .2s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--navy);
+        }
+
+        .breadcrumb span {
+            color: #a1afb8;
+        }
+
+        .pm-label {
+            margin-bottom: 16px;
+
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 3px;
+
+            color: #547087;
+        }
+
+        .pm-hero h1 {
+            max-width: 680px;
+
+            font-family: var(--serif);
+            font-size: clamp(55px, 6vw, 84px);
+            font-weight: 400;
+            line-height: .96;
+            letter-spacing: -2px;
+
+            color: var(--navy);
+        }
+
+        .pm-lead {
+            max-width: 620px;
+            margin-top: 27px;
+
+            font-size: 15px;
+            line-height: 1.8;
+
+            color: #405d71;
+        }
+
+        .pm-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            margin-top: 34px;
+        }
+
+        .pm-tag {
+            display: inline-flex;
+            align-items: center;
+
+            min-height: 38px;
+            padding: 0 16px;
+
+            border-radius: 25px;
+            border: 1px solid rgba(8, 42, 69, .07);
+
+            background: rgba(255, 255, 255, .72);
+
+            font-size: 9px;
+            font-weight: 600;
+
+            color: #49667a;
+        }
+
+
+        /* =========================================================
+           PACEMAKER VISUAL
+        ========================================================= */
+
+        .pm-visual {
+            position: relative;
+
+            min-height: 410px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pm-circle {
+            position: absolute;
+
+            width: 340px;
+            height: 340px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(9, 41, 68, .08);
+        }
+
+        .pm-circle::before {
+            content: "";
+
+            position: absolute;
+
+            width: 265px;
+            height: 265px;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(9, 41, 68, .07);
+        }
+
+        .pm-glow {
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(72, 136, 172, .18),
+                    rgba(72, 136, 172, .07) 50%,
+                    transparent 72%
+                );
+
+            filter: blur(5px);
+        }
+
+        .device-wrap {
+            position: relative;
+
+            z-index: 3;
+
+            width: 155px;
+            height: 180px;
+        }
+
+        .device-body {
+            position: absolute;
+
+            width: 105px;
+            height: 118px;
+
+            left: 5px;
+            top: 5px;
+
+            border-radius: 27px 27px 32px 32px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #f6f8f9 0%,
+                    #c6d0d5 46%,
+                    #eef2f4 100%
+                );
+
+            border: 1px solid rgba(42, 67, 83, .22);
+
+            box-shadow:
+                0 25px 45px rgba(9, 41, 68, .18),
+                inset 5px 5px 12px rgba(255, 255, 255, .8);
+        }
+
+        .device-body::before {
+            content: "CARDIAC";
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            top: 52px;
+
+            text-align: center;
+
+            font-size: 6px;
+            font-weight: 700;
+            letter-spacing: 1.7px;
+
+            color: #647b89;
+        }
+
+        .device-header {
+            position: absolute;
+
+            width: 74px;
+            height: 29px;
+
+            left: 20px;
+            top: -13px;
+
+            border-radius: 8px 8px 3px 3px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #bcc9cf,
+                    #e8edef
+                );
+
+            border: 1px solid rgba(50, 77, 92, .18);
+        }
+
+        .device-header::before,
+        .device-header::after {
+            content: "";
+
+            position: absolute;
+
+            width: 8px;
+            height: 8px;
+
+            top: 9px;
+
+            border-radius: 50%;
+
+            background: #6c8492;
+        }
+
+        .device-header::before {
+            left: 19px;
+        }
+
+        .device-header::after {
+            right: 19px;
+        }
+
+        .lead-one,
+        .lead-two {
+            position: absolute;
+
+            width: 110px;
+            height: 150px;
+
+            border: 2px solid #6b8797;
+            border-left: 0;
+            border-bottom: 0;
+
+            border-radius: 0 70px 0 0;
+
+            opacity: .9;
+        }
+
+        .lead-one {
+            left: 70px;
+            top: 0;
+
+            transform: rotate(13deg);
+        }
+
+        .lead-two {
+            left: 82px;
+            top: 10px;
+
+            width: 125px;
+            height: 175px;
+
+            transform: rotate(20deg);
+        }
+
+        .lead-one::after,
+        .lead-two::after {
+            content: "";
+
+            position: absolute;
+
+            width: 6px;
+            height: 6px;
+
+            right: -4px;
+            bottom: -2px;
+
+            border-radius: 50%;
+
+            background: #d95d63;
+
+            box-shadow:
+                0 0 0 5px rgba(217, 93, 99, .10);
+        }
+
+        .pm-pulse {
+            position: absolute;
+
+            z-index: 4;
+
+            left: 50%;
+            bottom: 28px;
+
+            transform: translateX(-50%);
+
+            width: 260px;
+            height: 70px;
+        }
+
+        .pm-pulse svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .pm-pulse path {
+            fill: none;
+            stroke: rgba(49, 95, 124, .42);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .pm-visual-note {
+            position: absolute;
+
+            right: 0;
+            top: 38px;
+
+            width: 145px;
+
+            font-size: 9px;
+            line-height: 1.55;
+
+            color: #5f7788;
+        }
+
+        .pm-visual-note strong {
+            display: block;
+
+            margin-bottom: 5px;
+
+            font-size: 9px;
+            letter-spacing: 1px;
+
+            color: var(--navy);
+        }
+
+
+        /* =========================================================
+           CONTENT
+        ========================================================= */
+
+        .pm-body {
+            padding: 95px 0 110px;
+        }
+
+        .pm-layout {
+            display: grid;
+
+            grid-template-columns:
+                230px
+                minmax(0, 720px);
+
+            justify-content: center;
+
+            gap: 80px;
+
+            align-items: start;
+        }
+
+        .pm-sidebar {
+            position: sticky;
+            top: 110px;
+        }
+
+        .pm-sidebar-title {
+            margin-bottom: 17px;
+
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 2px;
+
+            color: #8a9ba7;
+        }
+
+        .pm-sidebar nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pm-sidebar nav a {
+            padding: 12px 0 12px 17px;
+
+            border-left: 1px solid #dce6ec;
+
+            font-size: 10px;
+            line-height: 1.4;
+
+            color: #607684;
+
+            transition:
+                color .2s ease,
+                border-color .2s ease;
+        }
+
+        .pm-sidebar nav a:hover {
+            color: var(--navy);
+            border-left-color: var(--navy);
+        }
+
+        .pm-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            margin-top: 30px;
+
+            font-size: 9px;
+            font-weight: 600;
+
+            color: var(--navy);
+        }
+
+
+        /* SECTIONS */
+
+        .pm-section {
+            padding-bottom: 70px;
+            scroll-margin-top: 110px;
+        }
+
+        .pm-section + .pm-section {
+            padding-top: 5px;
+            border-top: 1px solid #e5ecef;
+        }
+
+        .pm-number {
+            display: inline-flex;
+            align-items: center;
+
+            margin-top: 50px;
+            margin-bottom: 15px;
+
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+
+            color: #7890a0;
+        }
+
+        .pm-section:first-child .pm-number {
+            margin-top: 0;
+        }
+
+        .pm-section h2 {
+            max-width: 660px;
+
+            font-family: var(--serif);
+            font-size: clamp(34px, 4vw, 48px);
+            font-weight: 400;
+            line-height: 1.05;
+
+            color: var(--navy);
+        }
+
+        .pm-section h3 {
+            margin-top: 30px;
+
+            font-family: var(--serif);
+            font-size: 25px;
+            font-weight: 400;
+
+            color: var(--navy);
+        }
+
+        .pm-section > p {
+            margin-top: 19px;
+
+            font-size: 13px;
+            line-height: 1.9;
+
+            color: #52697a;
+        }
+
+
+        /* INFO BOX */
+
+        .pm-info {
+            position: relative;
+
+            overflow: hidden;
+
+            margin-top: 34px;
+            padding: 29px 31px;
+
+            border-radius: 8px;
+            border: 1px solid #dde9ef;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef6fa,
+                    #f8fbfc
+                );
+        }
+
+        .pm-info::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+            bottom: 0;
+
+            width: 5px;
+
+            background: #315f7c;
+        }
+
+        .pm-info strong {
+            display: block;
+
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 2px;
+
+            color: #55768c;
+        }
+
+        .pm-info p {
+            margin-top: 10px;
+
+            font-size: 12px;
+            line-height: 1.75;
+
+            color: #405d71;
+        }
+
+
+        /* WHY CARDS */
+
+        .reason-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 10px;
+
+            margin-top: 31px;
+        }
+
+        .reason-card {
+            min-height: 140px;
+
+            padding: 23px;
+
+            border: 1px solid #e0e8ed;
+            border-radius: 8px;
+
+            background: #fff;
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 15px 35px rgba(8, 42, 69, .07);
+        }
+
+        .reason-icon {
+            width: 35px;
+            height: 35px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 16px;
+
+            border-radius: 50%;
+
+            background: #edf5fa;
+
+            color: #315f7c;
+
+            font-size: 16px;
+        }
+
+        .reason-card h4 {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 400;
+
+            color: var(--navy);
+        }
+
+        .reason-card p {
+            margin-top: 7px;
+
+            font-size: 10px;
+            line-height: 1.65;
+
+            color: #607684;
+        }
+
+
+        /* PROCEDURE */
+
+        .pm-process {
+            margin-top: 35px;
+        }
+
+        .pm-process-item {
+            position: relative;
+
+            display: grid;
+            grid-template-columns: 48px 1fr;
+
+            gap: 20px;
+
+            padding-bottom: 30px;
+        }
+
+        .pm-process-item:not(:last-child)::before {
+            content: "";
+
+            position: absolute;
+
+            left: 23px;
+            top: 47px;
+            bottom: 0;
+
+            width: 1px;
+
+            background: #dbe5ea;
+        }
+
+        .pm-process-number {
+            position: relative;
+            z-index: 2;
+
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            border: 1px solid #dce8ee;
+
+            background: #edf5f9;
+
+            font-family: var(--serif);
+            font-size: 17px;
+
+            color: var(--navy);
+        }
+
+        .pm-process-content {
+            padding-top: 5px;
+        }
+
+        .pm-process-content h4 {
+            font-size: 12px;
+            font-weight: 700;
+
+            color: var(--navy);
+        }
+
+        .pm-process-content p {
+            margin-top: 7px;
+
+            font-size: 11px;
+            line-height: 1.7;
+
+            color: #607684;
+        }
+
+
+        /* DAILY LIFE */
+
+        .life-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 11px;
+
+            margin-top: 32px;
+        }
+
+        .life-card {
+            padding: 25px;
+
+            border-radius: 8px;
+
+            background: #f5f9fb;
+
+            border: 1px solid transparent;
+        }
+
+        .life-card-icon {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 18px;
+
+            border-radius: 50%;
+
+            background: #fff;
+
+            box-shadow:
+                0 8px 20px rgba(9, 41, 68, .06);
+
+            font-size: 17px;
+
+            color: #315f7c;
+        }
+
+        .life-card h4 {
+            font-size: 11px;
+            font-weight: 700;
+
+            color: var(--navy);
+        }
+
+        .life-card p {
+            margin-top: 8px;
+
+            font-size: 10px;
+            line-height: 1.7;
+
+            color: #607684;
+        }
+
+
+        /* FOLLOW-UP */
+
+        .follow-box {
+            margin-top: 32px;
+
+            display: grid;
+            grid-template-columns: 120px 1fr;
+
+            overflow: hidden;
+
+            border: 1px solid #dce7ec;
+            border-radius: 9px;
+        }
+
+        .follow-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 150px;
+
+            background: var(--navy);
+
+            color: #fff;
+
+            font-family: var(--serif);
+            font-size: 45px;
+        }
+
+        .follow-content {
+            padding: 27px 30px;
+
+            background: #f8fbfc;
+        }
+
+        .follow-content strong {
+            display: block;
+
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+
+            color: var(--navy);
+        }
+
+        .follow-content p {
+            margin-top: 10px;
+
+            font-size: 11px;
+            line-height: 1.75;
+
+            color: #607684;
+        }
+
+
+        /* FAQ */
+
+        .pm-faq {
+            margin-top: 30px;
+
+            border-top: 1px solid #dfe7eb;
+        }
+
+        .pm-faq-item {
+            border-bottom: 1px solid #dfe7eb;
+        }
+
+        .pm-question {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 22px 0;
+
+            border: 0;
+            background: transparent;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            color: var(--navy);
+        }
+
+        .pm-question span:first-child {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .pm-plus {
+            flex: 0 0 auto;
+
+            font-size: 20px;
+            font-weight: 300;
+
+            transition: transform .25s ease;
+        }
+
+        .pm-answer {
+            max-height: 0;
+            overflow: hidden;
+
+            transition: max-height .35s ease;
+        }
+
+        .pm-answer p {
+            margin: 0;
+
+            padding: 0 45px 22px 0;
+
+            font-size: 11px;
+            line-height: 1.8;
+
+            color: #607684;
+        }
+
+        .pm-faq-item.active .pm-answer {
+            max-height: 300px;
+        }
+
+        .pm-faq-item.active .pm-plus {
+            transform: rotate(45deg);
+        }
+
+
+        /* DISCLAIMER */
+
+        .pm-medical-note {
+            margin-top: 35px;
+
+            padding: 27px;
+
+            border-radius: 8px;
+
+            background: var(--navy);
+
+            color: #fff;
+        }
+
+        .pm-medical-note strong {
+            display: block;
+
+            font-family: var(--serif);
+            font-size: 21px;
+            font-weight: 400;
+        }
+
+        .pm-medical-note p {
+            margin-top: 10px;
+
+            font-size: 10px;
+            line-height: 1.7;
+
+            color: #c2d2dd;
+        }
+
+
+        /* NEXT */
+
+        .pm-next {
+            padding: 70px 0;
+
+            border-top: 1px solid #e0eaef;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f1f7fa,
+                    #eaf3f8
+                );
+        }
+
+        .pm-next-grid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 50px;
+        }
+
+        .pm-next-label {
+            margin-bottom: 10px;
+
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 2px;
+
+            color: #718a9a;
+        }
+
+        .pm-next h2 {
+            font-family: var(--serif);
+            font-size: clamp(31px, 4vw, 44px);
+            font-weight: 400;
+
+            color: var(--navy);
+        }
+
+        .pm-next-link {
+            min-height: 47px;
+
+            display: inline-flex;
+            align-items: center;
+
+            gap: 28px;
+
+            padding: 0 22px;
+
+            border-radius: 25px;
+
+            background: var(--navy);
+
+            color: #fff;
+
+            font-size: 10px;
+            font-weight: 600;
+
+            white-space: nowrap;
+
+            transition:
+                transform .2s ease,
+                background .2s ease;
+        }
+
+        .pm-next-link:hover {
+            transform: translateY(-2px);
+
+            background: #12466a;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 950px) {
+
+            .pm-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .pm-visual {
+                min-height: 340px;
+            }
+
+            .pm-layout {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .pm-sidebar {
+                position: static;
+            }
+
+            .pm-sidebar nav {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .pm-hero {
+                padding: 55px 0 45px;
+            }
+
+            .pm-hero h1 {
+                font-size: 52px;
+            }
+
+            .pm-lead {
+                font-size: 13px;
+            }
+
+            .pm-visual {
+                min-height: 280px;
+            }
+
+            .pm-circle {
+                width: 250px;
+                height: 250px;
+            }
+
+            .pm-circle::before {
+                width: 190px;
+                height: 190px;
+            }
+
+            .pm-visual-note {
+                display: none;
+            }
+
+            .pm-body {
+                padding: 65px 0 80px;
+            }
+
+            .pm-sidebar nav {
+                grid-template-columns: 1fr;
+            }
+
+            .reason-grid,
+            .life-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pm-section h2 {
+                font-size: 36px;
+            }
+
+            .follow-box {
+                grid-template-columns: 1fr;
+            }
+
+            .follow-icon {
+                min-height: 90px;
+            }
+
+            .pm-next-grid {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .pm-next-link {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="pacemaker-page">
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header" id="header">
+
+    <div class="header-inner">
+
+        <a href="./index.html" class="brand">
+
+            <div class="brand-logo">
+                SD
+            </div>
+
+            <div class="brand-text">
+                <strong>Doç. Dr. Serdar Demir</strong>
+                <span>Kardiyoloji</span>
+            </div>
+
+        </a>
+
+
+        <nav class="nav" id="nav">
+
+            <a href="./index.html">Ana Sayfa</a>
+
+            <a href="./index.html#hakkimda">
+                Hakkında
+            </a>
+
+            <a href="./index.html#uzmanlik">
+                Uzmanlık Alanları
+            </a>
+
+            <a href="./index.html#akademik">
+                Akademik
+            </a>
+
+            <a href="./index.html#bilgilendirme">
+                Hasta Bilgilendirme
+            </a>
+
+            <a href="./index.html#iletisim">
+                İletişim
+            </a>
+
+        </nav>
+
+
+        <a
+            href="./index.html#iletisim"
+            class="header-button"
+        >
+            İletişim / Kurum Bilgileri
+            <span>→</span>
+        </a>
+
+
+        <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Menüyü aç"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="pm-hero">
+
+    <div class="container">
+
+        <div class="pm-hero-grid">
+
+
+            <div>
+
+                <div class="breadcrumb">
+
+                    <a href="./index.html">
+                        Ana Sayfa
+                    </a>
+
+                    <span>›</span>
+
+                    <a href="./index.html#bilgilendirme">
+                        Hasta Bilgilendirme
+                    </a>
+
+                    <span>›</span>
+
+                    <strong>
+                        Kalp Pili
+                    </strong>
+
+                </div>
+
+
+                <div class="pm-label">
+                    HASTA BİLGİLENDİRME
+                </div>
+
+
+                <h1>
+                    Kalp pili
+                    <br>
+                    ile yaşam.
+                </h1>
+
+
+                <p class="pm-lead">
+
+                    Kalp pili, kalbin elektriksel sistemini takip eden
+                    ve gerektiğinde kalbin uygun hızda çalışmasına
+                    yardımcı olan implante edilebilir bir kardiyak
+                    cihazdır.
+
+                </p>
+
+
+                <div class="pm-tags">
+
+                    <div class="pm-tag">
+                        Kalp Pili
+                    </div>
+
+                    <div class="pm-tag">
+                        Bradikardi
+                    </div>
+
+                    <div class="pm-tag">
+                        Kardiyak Cihazlar
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VISUAL -->
+
+            <div class="pm-visual">
+
+                <div class="pm-glow"></div>
+                <div class="pm-circle"></div>
+
+
+                <div class="device-wrap">
+
+                    <div class="lead-one"></div>
+                    <div class="lead-two"></div>
+
+                    <div class="device-body">
+                        <div class="device-header"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="pm-pulse">
+
+                    <svg
+                        viewBox="0 0 260 70"
+                        preserveAspectRatio="none"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="
+                            M0 35
+                            L55 35
+                            L70 29
+                            L82 42
+                            L94 35
+                            L118 35
+                            L128 10
+                            L140 60
+                            L152 22
+                            L166 42
+                            L180 35
+                            L260 35
+                            "
+                        />
+                    </svg>
+
+                </div>
+
+
+                <div class="pm-visual-note">
+
+                    <strong>
+                        CARDIAC PACING
+                    </strong>
+
+                    Cihaz kalbin ritmini izler
+                    ve ihtiyaç olduğunda elektriksel
+                    uyarı oluşturabilir.
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTENT
+========================================================= -->
+
+<section class="pm-body">
+
+    <div class="container">
+
+        <div class="pm-layout">
+
+
+            <!-- SIDEBAR -->
+
+            <aside class="pm-sidebar">
+
+                <div class="pm-sidebar-title">
+                    BU SAYFADA
+                </div>
+
+                <nav>
+
+                    <a href="#nedir">
+                        Kalp pili nedir?
+                    </a>
+
+                    <a href="#neden">
+                        Neden takılır?
+                    </a>
+
+                    <a href="#islem">
+                        Nasıl takılır?
+                    </a>
+
+                    <a href="#yasam">
+                        Günlük yaşam
+                    </a>
+
+                    <a href="#kontrol">
+                        Kalp pili kontrolleri
+                    </a>
+
+                    <a href="#sss">
+                        Sık sorulan sorular
+                    </a>
+
+                </nav>
+
+
+                <a
+                    href="./index.html#bilgilendirme"
+                    class="pm-back"
+                >
+                    ← Hasta bilgilendirme
+                </a>
+
+            </aside>
+
+
+
+            <article>
+
+
+                <!-- 01 -->
+
+                <section
+                    class="pm-section"
+                    id="nedir"
+                >
+
+                    <div class="pm-number">
+                        01 · TEMEL BİLGİLER
+                    </div>
+
+
+                    <h2>
+                        Kalp pili nedir?
+                    </h2>
+
+
+                    <p>
+
+                        Kalbin doğal elektriksel sistemi, kalp atımlarının
+                        uygun hız ve düzende gerçekleşmesini sağlar.
+                        Bu sistemin yeterli elektriksel uyarıyı
+                        oluşturamadığı veya uyarının kalp içerisinde
+                        uygun şekilde iletilemediği bazı durumlarda
+                        kalp hızı normalden yavaşlayabilir.
+
+                    </p>
+
+
+                    <p>
+
+                        Kalp pili; kalp ritmini sürekli takip eden ve
+                        ihtiyaç olduğunda kalbe küçük elektriksel
+                        uyarılar göndererek uygun kalp hızının
+                        korunmasına yardımcı olan elektronik bir
+                        cihazdır.
+
+                    </p>
+
+
+                    <div class="pm-info">
+
+                        <strong>
+                            KISA BİLGİ
+                        </strong>
+
+                        <p>
+
+                            Kalp pili sürekli olarak kalbi uyarmak
+                            zorunda değildir. Modern cihazlar kalbin
+                            kendi ritmini takip eder ve programlanan
+                            özelliklere göre gerektiğinde devreye girer.
+
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- 02 -->
+
+                <section
+                    class="pm-section"
+                    id="neden"
+                >
+
+                    <div class="pm-number">
+                        02 · NEDEN TAKILIR?
+                    </div>
+
+
+                    <h2>
+                        Hangi durumlarda kalp pili
+                        gerekebilir?
+                    </h2>
+
+
+                    <p>
+
+                        Kalp pili ihtiyacı yalnızca kalp hızına
+                        bakılarak belirlenmez. Hastanın şikâyetleri,
+                        elektrokardiyografi ve ritim kayıtları ile
+                        kalbin elektriksel iletim sistemi birlikte
+                        değerlendirilir.
+
+                    </p>
+
+
+                    <div class="reason-grid">
+
+
+                        <div class="reason-card">
+
+                            <div class="reason-icon">
+                                ↓
+                            </div>
+
+                            <h4>
+                                Yavaş kalp ritmi
+                            </h4>
+
+                            <p>
+
+                                Kalp hızının klinik olarak anlamlı
+                                derecede yavaşladığı bazı durumlarda
+                                kalp pili değerlendirilebilir.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="reason-card">
+
+                            <div class="reason-icon">
+                                ∿
+                            </div>
+
+                            <h4>
+                                Sinüs düğümü sorunları
+                            </h4>
+
+                            <p>
+
+                                Kalbin doğal ritim merkezinin yeterli
+                                elektriksel uyarıyı oluşturamadığı
+                                durumlarda kullanılabilir.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="reason-card">
+
+                            <div class="reason-icon">
+                                ↯
+                            </div>
+
+                            <h4>
+                                İletim bozuklukları
+                            </h4>
+
+                            <p>
+
+                                Elektriksel uyarının kalbin üst ve alt
+                                odacıkları arasında iletilmesinin
+                                bozulduğu bazı AV bloklarda kalp pili
+                                gerekebilir.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="reason-card">
+
+                            <div class="reason-icon">
+                                ♡
+                            </div>
+
+                            <h4>
+                                Özel klinik durumlar
+                            </h4>
+
+                            <p>
+
+                                Bazı hastalarda kalbin elektriksel ve
+                                mekanik çalışmasının desteklenmesi için
+                                farklı kardiyak cihaz tedavileri
+                                değerlendirilebilir.
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- 03 -->
+
+                <section
+                    class="pm-section"
+                    id="islem"
+                >
+
+                    <div class="pm-number">
+                        03 · İŞLEM
+                    </div>
+
+
+                    <h2>
+                        Kalp pili nasıl takılır?
+                    </h2>
+
+
+                    <p>
+
+                        Kalp pili sistemi temel olarak cilt altına
+                        yerleştirilen cihaz ve kalp ile cihaz arasında
+                        elektriksel bağlantıyı sağlayan elektrotlardan
+                        oluşur.
+
+                    </p>
+
+
+                    <div class="pm-process">
+
+
+                        <div class="pm-process-item">
+
+                            <div class="pm-process-number">
+                                1
+                            </div>
+
+                            <div class="pm-process-content">
+
+                                <h4>
+                                    Hazırlık
+                                </h4>
+
+                                <p>
+
+                                    İşlem öncesinde hastanın klinik
+                                    durumu, kullandığı ilaçlar ve gerekli
+                                    tetkikler değerlendirilir.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pm-process-item">
+
+                            <div class="pm-process-number">
+                                2
+                            </div>
+
+                            <div class="pm-process-content">
+
+                                <h4>
+                                    Elektrotların yerleştirilmesi
+                                </h4>
+
+                                <p>
+
+                                    Uygun damar yolu kullanılarak
+                                    elektrot veya elektrotlar kalbin
+                                    gerekli bölgelerine ilerletilir.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pm-process-item">
+
+                            <div class="pm-process-number">
+                                3
+                            </div>
+
+                            <div class="pm-process-content">
+
+                                <h4>
+                                    Elektriksel ölçümler
+                                </h4>
+
+                                <p>
+
+                                    Elektrotların konumu ve elektriksel
+                                    ölçümleri işlem sırasında kontrol
+                                    edilir.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pm-process-item">
+
+                            <div class="pm-process-number">
+                                4
+                            </div>
+
+                            <div class="pm-process-content">
+
+                                <h4>
+                                    Cihazın yerleştirilmesi
+                                </h4>
+
+                                <p>
+
+                                    Kalp pili jeneratörü genellikle
+                                    göğüs bölgesinde cilt altına
+                                    hazırlanan alana yerleştirilir.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pm-process-item">
+
+                            <div class="pm-process-number">
+                                5
+                            </div>
+
+                            <div class="pm-process-content">
+
+                                <h4>
+                                    Programlama ve kontrol
+                                </h4>
+
+                                <p>
+
+                                    Sistem kontrol edilir ve cihaz
+                                    hastanın ihtiyacına göre
+                                    programlanır.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- 04 -->
+
+                <section
+                    class="pm-section"
+                    id="yasam"
+                >
+
+                    <div class="pm-number">
+                        04 · GÜNLÜK YAŞAM
+                    </div>
+
+
+                    <h2>
+                        Kalp pili ile günlük
+                        yaşam nasıl olur?
+                    </h2>
+
+
+                    <p>
+
+                        Kalp pili bulunan birçok kişi, işlem sonrası
+                        iyileşme döneminin ardından günlük yaşamına
+                        devam edebilir. Bununla birlikte cihazın tipi,
+                        kişinin kalp hastalığı ve yapılan işlemin
+                        özelliklerine göre öneriler değişebilir.
+
+                    </p>
+
+
+                    <div class="life-grid">
+
+
+                        <div class="life-card">
+
+                            <div class="life-card-icon">
+                                ◇
+                            </div>
+
+                            <h4>
+                                TELEFON VE ELEKTRONİK CİHAZLAR
+                            </h4>
+
+                            <p>
+
+                                Günlük kullanılan elektronik cihazların
+                                çoğu uygun şekilde kullanıldığında
+                                kalp pili ile birlikte kullanılabilir.
+                                Güçlü manyetik alan oluşturan cihazlar
+                                için özel öneriler gerekebilir.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="life-card">
+
+                            <div class="life-card-icon">
+                                ↗
+                            </div>
+
+                            <h4>
+                                HAREKET VE SPOR
+                            </h4>
+
+                            <p>
+
+                                İşlem sonrası erken dönemde yara ve
+                                elektrotların iyileşmesine yönelik
+                                hareket kısıtlamaları olabilir.
+                                Sonraki aktivite düzeyi hekim
+                                önerisine göre belirlenir.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="life-card">
+
+                            <div class="life-card-icon">
+                                ✈
+                            </div>
+
+                            <h4>
+                                SEYAHAT
+                            </h4>
+
+                            <p>
+
+                                Kalp pili bulunması tek başına seyahat
+                                etmeye engel değildir. Cihaz kimlik
+                                kartının seyahat sırasında kişinin
+                                yanında bulunması faydalıdır.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="life-card">
+
+                            <div class="life-card-icon">
+                                +
+                            </div>
+
+                            <h4>
+                                DİĞER TIBBİ İŞLEMLER
+                            </h4>
+
+                            <p>
+
+                                MR görüntüleme, cerrahi işlemler veya
+                                farklı tıbbi uygulamalar öncesinde
+                                sağlık ekibine kalp pili bulunduğu
+                                mutlaka bildirilmelidir.
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="pm-info">
+
+                        <strong>
+                            CİHAZ KİMLİK KARTI
+                        </strong>
+
+                        <p>
+
+                            Kalp pili takıldıktan sonra verilen cihaz
+                            kimlik bilgilerinin saklanması önemlidir.
+                            Başka bir sağlık kuruluşuna başvurulduğunda
+                            cihazın marka, model ve sistem bilgileri
+                            sağlık ekibinin değerlendirmesine yardımcı
+                            olabilir.
+
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- 05 -->
+
+                <section
+                    class="pm-section"
+                    id="kontrol"
+                >
+
+                    <div class="pm-number">
+                        05 · CİHAZ KONTROLLERİ
+                    </div>
+
+
+                    <h2>
+                        Kalp pili neden düzenli
+                        kontrol edilir?
+                    </h2>
+
+
+                    <p>
+
+                        Kalp pili kontrollerinde cihazın yalnızca
+                        bataryasına bakılmaz. Cihazın kayıtları,
+                        elektrotların elektriksel ölçümleri ve
+                        programlanan tedavi parametreleri de
+                        değerlendirilebilir.
+
+                    </p>
+
+
+                    <div class="follow-box">
+
+                        <div class="follow-icon">
+                            ∿
+                        </div>
+
+                        <div class="follow-content">
+
+                            <strong>
+                                Cihaz kontrolü
+                            </strong>
+
+                            <p>
+
+                                Kontroller sırasında batarya durumu,
+                                elektrot ölçümleri, kalbin kendi ritmi,
+                                cihazın çalışma oranları ve cihaz
+                                tarafından kaydedilmiş bazı ritim
+                                olayları değerlendirilebilir.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <p>
+
+                        Kontrol sıklığı cihazın özelliklerine,
+                        batarya durumuna ve hastanın klinik
+                        ihtiyacına göre değişebilir. Kontrol
+                        programı takip eden sağlık ekibi tarafından
+                        belirlenir.
+
+                    </p>
+
+                </section>
+
+
+
+                <!-- 06 -->
+
+                <section
+                    class="pm-section"
+                    id="sss"
+                >
+
+                    <div class="pm-number">
+                        06 · SIK SORULAN SORULAR
+                    </div>
+
+
+                    <h2>
+                        Kalp pili hakkında
+                        sık sorulanlar.
+                    </h2>
+
+
+                    <div class="pm-faq">
+
+
+                        <div class="pm-faq-item">
+
+                            <button class="pm-question">
+
+                                <span>
+                                    Kalp pili sürekli çalışır mı?
+                                </span>
+
+                                <span class="pm-plus">
+                                    +
+                                </span>
+
+                            </button>
+
+                            <div class="pm-answer">
+
+                                <p>
+
+                                    Cihaz kalbin elektriksel aktivitesini
+                                    takip eder. Kalbin kendi ritmi
+                                    yeterliyse programlama şekline bağlı
+                                    olarak uyarı vermeyebilir; ihtiyaç
+                                    oluştuğunda kalbi uyarabilir.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pm-faq-item">
+
+                            <button class="pm-question">
+
+                                <span>
+                                    Cep telefonu kullanabilir miyim?
+                                </span>
+
+                                <span class="pm-plus">
+                                    +
+                                </span>
+
+                            </button>
+
+                            <div class="pm-answer">
+
+                                <p>
+
+                                    Cep telefonları genellikle uygun
+                                    kullanım koşullarında kullanılabilir.
+                                    Cihaz üreticisinin ve takip eden
+                                    sağlık ekibinin önerilerine uyulması
+                                    önemlidir.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pm-faq-item">
+
+                            <button class="pm-question">
+
+                                <span>
+                                    Kalp pili olan kişi MR'a girebilir mi?
+                                </span>
+
+                                <span class="pm-plus">
+                                    +
+                                </span>
+
+                            </button>
+
+                            <div class="pm-answer">
+
+                                <p>
+
+                                    Bu durum kullanılan cihaz ve
+                                    elektrot sistemine bağlıdır. Bazı
+                                    sistemler belirli koşullar altında
+                                    MR uyumludur. MR planlanmadan önce
+                                    cihaz sisteminin uygunluğu
+                                    değerlendirilmelidir.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pm-faq-item">
+
+                            <button class="pm-question">
+
+                                <span>
+                                    Kalp pili biterse ne olur?
+                                </span>
+
+                                <span class="pm-plus">
+                                    +
+                                </span>
+
+                            </button>
+
+                            <div class="pm-answer">
+
+                                <p>
+
+                                    Kalp pili bataryası düzenli
+                                    kontroller sırasında takip edilir.
+                                    Cihazlar bataryanın durumuyla ilgili
+                                    önceden değerlendirme yapılmasına
+                                    imkân sağlayan bilgiler sunar.
+                                    Gerektiğinde cihaz değişimi
+                                    planlanabilir.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pm-faq-item">
+
+                            <button class="pm-question">
+
+                                <span>
+                                    Havaalanı güvenlik kontrolünden geçilebilir mi?
+                                </span>
+
+                                <span class="pm-plus">
+                                    +
+                                </span>
+
+                            </button>
+
+                            <div class="pm-answer">
+
+                                <p>
+
+                                    Seyahat öncesinde cihaz kimlik
+                                    kartının kişinin yanında bulunması
+                                    ve güvenlik görevlilerine implante
+                                    edilmiş kardiyak cihaz bulunduğunun
+                                    bildirilmesi uygundur.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pm-faq-item">
+
+                            <button class="pm-question">
+
+                                <span>
+                                    Kalp pilinin ömrü ne kadardır?
+                                </span>
+
+                                <span class="pm-plus">
+                                    +
+                                </span>
+
+                            </button>
+
+                            <div class="pm-answer">
+
+                                <p>
+
+                                    Batarya ömrü cihazın tipi,
+                                    programlanan özellikler ve hastanın
+                                    ne kadar pacing ihtiyacı olduğuna
+                                    göre değişebilir. Tahmini batarya
+                                    durumu cihaz kontrollerinde
+                                    değerlendirilir.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="pm-medical-note">
+
+                        <strong>
+                            Tıbbi bilgilendirme
+                        </strong>
+
+                        <p>
+
+                            Bu sayfadaki bilgiler genel bilgilendirme
+                            amacıyla hazırlanmıştır. Kalp pili
+                            endikasyonu, cihaz seçimi, programlama ve
+                            takip planı kişiye göre değişebilir.
+                            İçerik tanı veya tedavi önerisi niteliğinde
+                            değildir ve hekim değerlendirmesinin
+                            yerine geçmez.
+
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     NEXT
+========================================================= -->
+
+<section class="pm-next">
+
+    <div class="container">
+
+        <div class="pm-next-grid">
+
+            <div>
+
+                <div class="pm-next-label">
+                    HASTA BİLGİLENDİRME
+                </div>
+
+                <h2>
+                    Ritim bozukluğu nedir?
+                </h2>
+
+            </div>
+
+
+            <a
+                href="./ritim-bozuklugu.html"
+                class="pm-next-link"
+            >
+
+                Sonraki içerik
+
+                <span>→</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+
+        <a
+            href="./index.html"
+            class="footer-brand"
+        >
+
+            <div class="footer-logo">
+                SD
+            </div>
+
+            <div>
+
+                <strong>
+                    Doç. Dr. Serdar Demir
+                </strong>
+
+                <span>
+                    Kardiyoloji
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="footer-nav">
+
+            <a href="./index.html">
+                Ana Sayfa
+            </a>
+
+            <a href="./index.html#hakkimda">
+                Hakkında
+            </a>
+
+            <a href="./index.html#uzmanlik">
+                Uzmanlık Alanları
+            </a>
+
+            <a href="./index.html#akademik">
+                Akademik
+            </a>
+
+            <a href="./index.html#bilgilendirme">
+                Hasta Bilgilendirme
+            </a>
+
+            <a href="./index.html#iletisim">
+                İletişim
+            </a>
+
+        </nav>
+
+
+        <div class="footer-note">
+
+            <p>
+                © 2026 Doç. Dr. Serdar Demir
+            </p>
+
+            <p>
+
+                Bu internet sitesindeki içerikler genel
+                bilgilendirme amaçlıdır. Tanı veya tedavi
+                önerisi niteliğinde değildir ve hekim
+                muayenesinin yerine geçmez.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+    /* =========================================================
+       KALP PİLİ FAQ
+    ========================================================= */
+
+    const pmFaqItems =
+        document.querySelectorAll(".pm-faq-item");
+
+    pmFaqItems.forEach(item => {
+
+        const question =
+            item.querySelector(".pm-question");
+
+        question.addEventListener(
+            "click",
+            () => {
+
+                const active =
+                    item.classList.contains("active");
+
+                pmFaqItems.forEach(other => {
+                    other.classList.remove("active");
+                });
+
+                if (!active) {
+                    item.classList.add("active");
+                }
+
+            }
+        );
+
+    });
+
+
+    /* =========================================================
+       SMOOTH SIDEBAR
+    ========================================================= */
+
+    document
+        .querySelectorAll(
+            '.pm-sidebar a[href^="#"]'
+        )
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                function(e) {
+
+                    const target =
+                        document.querySelector(
+                            this.getAttribute("href")
+                        );
+
+                    if (!target) return;
+
+                    e.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+            );
+
+        });
+
+</script>
+
+
+</body>
+
+</html>

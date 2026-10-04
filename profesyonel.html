@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Profesyonel Alan | Doç. Dr. Serdar Demir</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy:#092944;
+            --deep:#041728;
+            --blue:#315f7c;
+            --ice:#dfeef6;
+            --pale:#eef6fa;
+            --text:#0d2b46;
+            --body:#627887;
+            --line:rgba(255,255,255,.10);
+            --serif:"Libre Caslon Display",Georgia,serif;
+            --sans:"DM Sans",Arial,sans-serif;
+        }
+
+        * { box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body {
+            margin:0;
+            min-height:100vh;
+            font-family:var(--sans);
+            color:#fff;
+            background:
+                radial-gradient(circle at 78% 12%, rgba(67,118,148,.25), transparent 28%),
+                radial-gradient(circle at 10% 82%, rgba(49,95,124,.14), transparent 25%),
+                var(--deep);
+        }
+
+        button,input { font:inherit; }
+        button { cursor:pointer; }
+
+        .shell {
+            width:min(1180px,88%);
+            margin:0 auto;
+        }
+
+        .topbar {
+            height:86px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            border-bottom:1px solid var(--line);
+        }
+
+        .brand {
+            display:flex;
+            align-items:center;
+            gap:14px;
+            color:#fff;
+            text-decoration:none;
+        }
+
+        .brand-mark {
+            padding-right:14px;
+            border-right:1px solid rgba(255,255,255,.18);
+            font-family:var(--serif);
+            font-size:27px;
+            line-height:1;
+        }
+
+        .brand-copy strong {
+            display:block;
+            font-size:11px;
+            font-weight:600;
+        }
+
+        .brand-copy small {
+            display:block;
+            margin-top:3px;
+            color:rgba(255,255,255,.46);
+            font-size:8px;
+        }
+
+        .back-link {
+            color:rgba(255,255,255,.55);
+            text-decoration:none;
+            font-size:9px;
+            transition:.25s ease;
+        }
+        .back-link:hover { color:#fff; }
+
+        .login-view {
+            min-height:calc(100vh - 86px);
+            display:grid;
+            grid-template-columns:minmax(0,1.1fr) minmax(350px,.72fr);
+            align-items:center;
+            gap:90px;
+            padding:70px 0 90px;
+        }
+
+        .eyebrow {
+            color:#91b5c9;
+            font-size:8px;
+            font-weight:600;
+            letter-spacing:3px;
+        }
+
+        .intro h1 {
+            max-width:720px;
+            margin:20px 0 24px;
+            font-family:var(--serif);
+            font-size:clamp(55px,6.5vw,88px);
+            font-weight:400;
+            line-height:.93;
+            letter-spacing:-2px;
+        }
+
+        .intro p {
+            max-width:560px;
+            margin:0;
+            color:rgba(255,255,255,.54);
+            font-size:12px;
+            line-height:1.9;
+        }
+
+        .clinical-line {
+            width:100%;
+            max-width:610px;
+            height:60px;
+            margin-top:46px;
+            opacity:.34;
+        }
+
+        .login-card {
+            position:relative;
+            overflow:hidden;
+            padding:42px;
+            border:1px solid rgba(255,255,255,.11);
+            border-radius:18px;
+            background:rgba(255,255,255,.055);
+            box-shadow:0 35px 90px rgba(0,0,0,.20);
+            backdrop-filter:blur(16px);
+        }
+
+        .login-card::before {
+            content:"";
+            position:absolute;
+            width:240px;
+            height:240px;
+            right:-150px;
+            top:-150px;
+            border:1px solid rgba(255,255,255,.08);
+            border-radius:50%;
+            box-shadow:0 0 0 30px rgba(255,255,255,.018);
+        }
+
+        .lock {
+            width:44px;
+            height:44px;
+            display:grid;
+            place-items:center;
+            margin-bottom:34px;
+            border:1px solid rgba(255,255,255,.14);
+            border-radius:50%;
+            color:#b8d0de;
+        }
+
+        .lock svg {
+            width:18px;
+            fill:none;
+            stroke:currentColor;
+            stroke-width:1.5;
+        }
+
+        .login-card h2 {
+            margin:0;
+            font-family:var(--serif);
+            font-size:37px;
+            font-weight:400;
+        }
+
+        .login-card > p {
+            margin:11px 0 30px;
+            color:rgba(255,255,255,.48);
+            font-size:10px;
+            line-height:1.7;
+        }
+
+        .field label {
+            display:block;
+            margin-bottom:9px;
+            color:rgba(255,255,255,.58);
+            font-size:8px;
+            font-weight:600;
+            letter-spacing:1.2px;
+        }
+
+        .field input {
+            width:100%;
+            height:52px;
+            padding:0 16px;
+            outline:none;
+            border:1px solid rgba(255,255,255,.13);
+            border-radius:8px;
+            color:#fff;
+            background:rgba(0,0,0,.12);
+            letter-spacing:2px;
+            transition:.25s ease;
+        }
+
+        .field input:focus {
+            border-color:rgba(145,181,201,.65);
+            box-shadow:0 0 0 3px rgba(145,181,201,.07);
+        }
+
+        .login-button {
+            width:100%;
+            height:52px;
+            margin-top:14px;
+            border:0;
+            border-radius:8px;
+            color:var(--deep);
+            background:#e8f2f7;
+            font-size:9px;
+            font-weight:700;
+            transition:.3s ease;
+        }
+
+        .login-button:hover {
+            transform:translateY(-2px);
+            background:#fff;
+        }
+
+        .security-note {
+            display:flex;
+            gap:10px;
+            margin-top:22px;
+            color:rgba(255,255,255,.31);
+            font-size:8px;
+            line-height:1.6;
+        }
+
+        .security-note span:first-child { color:#7fa7bd; }
+
+        .demo-note {
+            margin-top:28px;
+            padding-top:18px;
+            border-top:1px solid rgba(255,255,255,.08);
+            color:rgba(255,255,255,.28);
+            font-size:7.5px;
+            line-height:1.65;
+        }
+
+        /* ARCHIVE PREVIEW */
+        .archive-view {
+            display:none;
+            padding:62px 0 90px;
+        }
+
+        body.preview-open .login-view { display:none; }
+        body.preview-open .archive-view { display:block; }
+
+        .archive-head {
+            display:flex;
+            align-items:end;
+            justify-content:space-between;
+            gap:40px;
+            margin-bottom:42px;
+        }
+
+        .archive-head h1 {
+            margin:14px 0 0;
+            font-family:var(--serif);
+            font-size:58px;
+            font-weight:400;
+            line-height:1;
+        }
+
+        .archive-head p {
+            max-width:410px;
+            margin:0;
+            color:rgba(255,255,255,.42);
+            font-size:10px;
+            line-height:1.75;
+        }
+
+        .archive-toolbar {
+            display:flex;
+            gap:9px;
+            margin-bottom:24px;
+        }
+
+        .filter {
+            padding:9px 13px;
+            border:1px solid rgba(255,255,255,.10);
+            border-radius:999px;
+            color:rgba(255,255,255,.50);
+            background:transparent;
+            font-size:8px;
+        }
+
+        .filter.active {
+            color:#071e31;
+            background:#dfeef6;
+        }
+
+        .case-grid {
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:14px;
+        }
+
+        .case-card {
+            min-height:280px;
+            display:flex;
+            flex-direction:column;
+            padding:25px;
+            border:1px solid rgba(255,255,255,.09);
+            border-radius:13px;
+            background:rgba(255,255,255,.045);
+            transition:.35s ease;
+        }
+
+        .case-card:hover {
+            transform:translateY(-5px);
+            border-color:rgba(255,255,255,.16);
+            background:rgba(255,255,255,.07);
+        }
+
+        .case-meta {
+            display:flex;
+            justify-content:space-between;
+            color:#7fa7bd;
+            font-size:7px;
+            letter-spacing:1.3px;
+        }
+
+        .case-visual {
+            height:80px;
+            margin:25px 0;
+            display:flex;
+            align-items:center;
+            color:#7fa7bd;
+            opacity:.72;
+        }
+
+        .case-visual svg {
+            width:100%;
+            height:55px;
+            fill:none;
+            stroke:currentColor;
+            stroke-width:1.2;
+        }
+
+        .case-card h3 {
+            margin:auto 0 9px;
+            font-family:var(--serif);
+            font-size:26px;
+            font-weight:400;
+        }
+
+        .case-card p {
+            margin:0;
+            color:rgba(255,255,255,.40);
+            font-size:9px;
+            line-height:1.7;
+        }
+
+        .archive-warning {
+            margin-top:28px;
+            padding:18px 20px;
+            border:1px solid rgba(255,255,255,.07);
+            border-radius:10px;
+            color:rgba(255,255,255,.34);
+            background:rgba(255,255,255,.025);
+            font-size:8px;
+            line-height:1.7;
+        }
+
+        @media(max-width:900px) {
+            .login-view { grid-template-columns:1fr; gap:50px; }
+            .case-grid { grid-template-columns:repeat(2,1fr); }
+            .archive-head { align-items:start; flex-direction:column; }
+        }
+
+        @media(max-width:600px) {
+            .shell { width:min(90%,1180px); }
+            .topbar { height:76px; }
+            .brand-copy { display:none; }
+            .login-view { padding:50px 0 70px; }
+            .intro h1 { font-size:52px; }
+            .login-card { padding:30px 24px; }
+            .case-grid { grid-template-columns:1fr; }
+            .archive-head h1 { font-size:45px; }
+            .archive-toolbar { overflow:auto; padding-bottom:5px; }
+            .filter { flex:0 0 auto; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="shell topbar">
+        <a class="brand" href="index.html">
+            <span class="brand-mark">SD</span>
+            <span class="brand-copy">
+                <strong>Doç. Dr. Serdar Demir</strong>
+                <small>Kardiyoloji · Elektrofizyoloji</small>
+            </span>
+        </a>
+
+        <a class="back-link" href="index.html">← Ana siteye dön</a>
+    </header>
+
+
+    <main class="shell">
+
+        <section class="login-view">
+
+            <div class="intro">
+                <div class="eyebrow">PROFESYONEL ALAN</div>
+
+                <h1>
+                    Klinik vaka
+                    <br>
+                    arşivi.
+                </h1>
+
+                <p>
+                    Eğitim ve profesyonel paylaşım amacıyla hazırlanan,
+                    kimliksizleştirilmiş klinik vaka özetleri için ayrılmış alandır.
+                    Erişim yalnızca yetkilendirilmiş kullanıcılar içindir.
+                </p>
+
+                <svg class="clinical-line" viewBox="0 0 620 60" aria-hidden="true">
+                    <path d="M0 32h120l16-12 17 25 21-43 25 56 18-26h70l13-9 15 18 20-34 24 48 18-23h263"
+                          fill="none" stroke="currentColor" stroke-width="1"/>
+                </svg>
+            </div>
+
+
+            <div class="login-card">
+
+                <div class="lock">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="5" y="10" width="14" height="10" rx="2"/>
+                        <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+                    </svg>
+                </div>
+
+                <h2>Yetkili erişimi</h2>
+
+                <p>
+                    Size verilen erişim kodunu kullanarak
+                    profesyonel alana giriş yapın.
+                </p>
+
+                <form id="accessForm">
+                    <div class="field">
+                        <label for="accessCode">ERİŞİM KODU</label>
+                        <input
+                            id="accessCode"
+                            type="password"
+                            autocomplete="off"
+                            placeholder="••••••••"
+                            disabled
+                        >
+                    </div>
+
+                    <button class="login-button" type="button" id="previewButton">
+                        ARŞİV ARAYÜZÜNÜ ÖNİZLE →
+                    </button>
+                </form>
+
+                <div class="security-note">
+                    <span>○</span>
+                    <div>
+                        Gerçek erişim kodları bu HTML dosyasına kaydedilmez.
+                        Kimlik doğrulama sunucu tarafında yapılmalıdır.
+                    </div>
+                </div>
+
+                <div class="demo-note">
+                    Bu sayfa şu anda tasarım prototipidir. Gerçek şifreli erişim
+                    sistemi bağlanmadan vaka verisi yayınlanmamalıdır.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="archive-view" id="archivePreview">
+
+            <div class="archive-head">
+                <div>
+                    <div class="eyebrow">KLİNİK VAKA ARŞİVİ</div>
+                    <h1>Vaka özetleri.</h1>
+                </div>
+
+                <p>
+                    Aşağıdaki içerikler yalnızca arayüz örneğidir.
+                    Gerçek vaka kayıtları eklenirken hasta kimliğini açığa çıkaran
+                    tüm bilgiler kaldırılmalıdır.
+                </p>
+            </div>
+
+            <div class="archive-toolbar">
+                <button class="filter active">Tümü</button>
+                <button class="filter">Ablasyon</button>
+                <button class="filter">Elektrofizyoloji</button>
+                <button class="filter">Cihaz</button>
+                <button class="filter">AF</button>
+            </div>
+
+            <div class="case-grid">
+
+                <article class="case-card">
+                    <div class="case-meta">
+                        <span>ÖRNEK VAKA 01</span>
+                        <span>ABLASYON</span>
+                    </div>
+                    <div class="case-visual">
+                        <svg viewBox="0 0 300 55">
+                            <path d="M0 30h50l8-8 10 18 13-33 15 43 12-20h40l9-7 9 15 13-28 15 39 12-19h94"/>
+                        </svg>
+                    </div>
+                    <h3>SVT / AVNRT</h3>
+                    <p>Tanı, elektrofizyolojik bulgular ve işlem yaklaşımı için örnek vaka kartı.</p>
+                </article>
+
+                <article class="case-card">
+                    <div class="case-meta">
+                        <span>ÖRNEK VAKA 02</span>
+                        <span>AF</span>
+                    </div>
+                    <div class="case-visual">
+                        <svg viewBox="0 0 300 55">
+                            <path d="M0 31c13-22 21 21 34 0s21 21 34 0 21 21 34 0 21 21 34 0 21 21 34 0 21 21 34 0 21 21 34 0 21 21 34 0"/>
+                        </svg>
+                    </div>
+                    <h3>Atriyal Fibrilasyon</h3>
+                    <p>PVI planlaması, temel işlem bilgileri ve eğitim notları için örnek alan.</p>
+                </article>
+
+                <article class="case-card">
+                    <div class="case-meta">
+                        <span>ÖRNEK VAKA 03</span>
+                        <span>CİHAZ</span>
+                    </div>
+                    <div class="case-visual">
+                        <svg viewBox="0 0 300 55">
+                            <rect x="105" y="4" width="54" height="45" rx="9"/>
+                            <path d="M116 25h10l4-11 7 23 6-16 5 7h8"/>
+                            <path d="M128 49v6M142 49v6"/>
+                        </svg>
+                    </div>
+                    <h3>ICD / CRT</h3>
+                    <p>Cihaz implantasyonu veya takip sürecine ait kimliksizleştirilmiş örnek vaka kartı.</p>
+                </article>
+
+            </div>
+
+            <div class="archive-warning">
+                Hasta adı, T.C. kimlik numarası, protokol numarası, telefon, doğum tarihi,
+                açık yüz görüntüsü veya hastayı doğrudan tanımlayabilecek başka bilgiler bu alana
+                yüklenmemelidir. EKG, EP ve cihaz ekran görüntülerindeki kimlik alanları da
+                paylaşım öncesinde temizlenmelidir.
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>
+        // Only a visual preview. This is NOT authentication.
+        document.getElementById("previewButton").addEventListener("click", function () {
+            document.body.classList.add("preview-open");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+</body>
+</html>
