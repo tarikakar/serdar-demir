@@ -1920,7 +1920,7 @@
 
 
         
-            <a class="professional-nav-link" href="profesyonel.html" aria-label="Profesyonel alana giriş">
+            <a class="professional-nav-link" href="#profesyonel" aria-label="Profesyonel alana giriş">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <rect x="6.5" y="10.5" width="11" height="8.5" rx="2"></rect>
                     <path d="M9 10.5V8a3 3 0 0 1 6 0v2.5"></path>
@@ -3264,6 +3264,68 @@ document.addEventListener("click", function (event) {
 });
 </script>
 
+
+<style>
+#professionalOverlay{position:fixed;inset:0;z-index:999999;background:#f3f8fb;display:none}
+#professionalOverlay.active{display:block}
+#professionalClose{position:absolute;right:18px;top:12px;z-index:2;border:1px solid #ccdce6;background:white;color:#092944;border-radius:24px;padding:9px 16px;font:600 12px Arial;cursor:pointer}
+#professionalFrame{height:100%;width:100%;border:0;display:block}
+</style>
+<div id="professionalOverlay" role="dialog" aria-modal="true" aria-label="Profesyonel personel girişi">
+<button id="professionalClose" type="button" aria-label="Profesyonel alanı kapat">✕ Kapat</button>
+<iframe id="professionalFrame" title="Personel giriş ekranı" referrerpolicy="strict-origin-when-cross-origin" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;tr&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+&lt;title&gt;Profesyonel Alan | Doç. Dr. Serdar Demir&lt;/title&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;noindex,nofollow&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Libre+Caslon+Display&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+:root{font-family:&#x27;DM Sans&#x27;,Arial,sans-serif;color:#092944;background:#f3f8fb}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 85% 12%,#d9e9f1,transparent 36%),#f3f8fb}header{height:84px;background:#ffffffd9;border-bottom:1px solid #09294414;display:flex;align-items:center;justify-content:space-between;padding:0 max(6%,calc((100vw - 1180px)/2))}a{color:inherit;text-decoration:none}.brand{display:flex;align-items:center;gap:14px}.logo{width:44px;height:44px;border:1px solid #09294425;display:grid;place-items:center;font-family:Georgia,serif;font-size:23px}.brand strong{display:block;font-size:13px}.brand small{font-size:10px;color:#6a7d8b}.back{font-size:12px;color:#52697a}main{min-height:calc(100vh - 150px);display:grid;place-items:center;padding:65px 20px}.panel{width:min(100%,510px);padding:48px;background:#fff;border:1px solid #09294412;border-radius:15px;box-shadow:0 22px 70px #09294410}.eyebrow{font-size:10px;letter-spacing:2px;color:#53758c;font-weight:700}h1{font:normal clamp(34px,5vw,49px)/1.08 &#x27;Libre Caslon Display&#x27;,Georgia,serif;margin:15px 0}p{font-size:13px;color:#617789;line-height:1.8;margin:0 0 27px}.field{display:block;font-size:11px;font-weight:600;margin:20px 0 8px}input{width:100%;border:1px solid #cbd9e2;border-radius:8px;background:#fbfdfe;padding:14px 15px;font:inherit;font-size:13px;color:#092944}input:focus{outline:2px solid #a8c5d7;outline-offset:1px}button{border:0;border-radius:8px;background:#092944;color:white;width:100%;padding:15px;margin-top:24px;font:600 12px &#x27;DM Sans&#x27;,sans-serif;cursor:pointer}button:disabled{opacity:.6;cursor:wait}.secondary{background:#eaf2f6;color:#092944;margin-top:10px}.status{min-height:18px;margin-top:16px;font-size:12px;line-height:1.6;color:#a03a3a}.success{color:#21694d}.hidden{display:none!important}.divider{height:1px;background:#e2eaf0;margin:28px 0}.notice{padding:16px 18px;background:#f1f7fa;border-left:2px solid #315f7c;font-size:12px;color:#52697a;line-height:1.8}footer{text-align:center;padding:24px;font-size:10px;color:#80909a}@media(max-width:600px){header{padding:0 22px}.panel{padding:32px 25px}.back{font-size:10px}}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;&lt;a class=&quot;brand&quot; href=&quot;#anasayfa&quot; target=&quot;_parent&quot;&gt;&lt;span class=&quot;logo&quot;&gt;SD&lt;/span&gt;&lt;span&gt;&lt;strong&gt;Doç. Dr. Serdar Demir&lt;/strong&gt;&lt;small&gt;Kardiyoloji · Profesyonel Alan&lt;/small&gt;&lt;/span&gt;&lt;/a&gt;&lt;a class=&quot;back&quot; href=&quot;#anasayfa&quot; target=&quot;_parent&quot;&gt;← Ana Sayfaya Dön&lt;/a&gt;&lt;/header&gt;
+&lt;main&gt;
+&lt;section class=&quot;panel&quot; id=&quot;loginPanel&quot;&gt;&lt;div class=&quot;eyebrow&quot;&gt;YETKİLİ PERSONEL&lt;/div&gt;&lt;h1&gt;Profesyonel alan.&lt;/h1&gt;&lt;p&gt;Bu bölüm yalnızca yetkilendirilmiş personelin erişimi için ayrılmıştır.&lt;/p&gt;&lt;form id=&quot;loginForm&quot;&gt;&lt;label class=&quot;field&quot; for=&quot;email&quot;&gt;E-posta adresi&lt;/label&gt;&lt;input id=&quot;email&quot; type=&quot;email&quot; autocomplete=&quot;username&quot; required placeholder=&quot;personel@ornek.com&quot;&gt;&lt;label class=&quot;field&quot; for=&quot;password&quot;&gt;Şifre&lt;/label&gt;&lt;input id=&quot;password&quot; type=&quot;password&quot; autocomplete=&quot;current-password&quot; required placeholder=&quot;Şifreniz&quot;&gt;&lt;button id=&quot;loginButton&quot; type=&quot;submit&quot;&gt;Giriş yap →&lt;/button&gt;&lt;/form&gt;&lt;div class=&quot;status&quot; id=&quot;loginStatus&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;section class=&quot;panel hidden&quot; id=&quot;welcomePanel&quot;&gt;&lt;div class=&quot;eyebrow&quot;&gt;PERSONEL ERİŞİMİ&lt;/div&gt;&lt;h1&gt;Hoş geldiniz.&lt;/h1&gt;&lt;p id=&quot;accountLabel&quot;&gt;&lt;/p&gt;&lt;div class=&quot;notice&quot;&gt;&lt;strong&gt;Profesyonel içerik alanımız hazırlanıyor.&lt;/strong&gt;&lt;br&gt;Vaka özetleri, eğitim materyalleri ve akademik paylaşımlar yakında yetkili kullanıcıların erişimine sunulacaktır.&lt;/div&gt;&lt;div class=&quot;divider&quot;&gt;&lt;/div&gt;&lt;button class=&quot;secondary&quot; id=&quot;showChange&quot; type=&quot;button&quot;&gt;Şifremi değiştir&lt;/button&gt;&lt;button id=&quot;logout&quot; type=&quot;button&quot;&gt;Güvenli çıkış&lt;/button&gt;&lt;/section&gt;
+&lt;section class=&quot;panel hidden&quot; id=&quot;changePanel&quot;&gt;&lt;div class=&quot;eyebrow&quot;&gt;HESAP GÜVENLİĞİ&lt;/div&gt;&lt;h1&gt;Şifre değiştir.&lt;/h1&gt;&lt;p&gt;Hesabınız için yalnızca size ait güçlü bir şifre belirleyin.&lt;/p&gt;&lt;form id=&quot;changeForm&quot;&gt;&lt;label class=&quot;field&quot; for=&quot;newPassword&quot;&gt;Yeni şifre (en az 12 karakter)&lt;/label&gt;&lt;input id=&quot;newPassword&quot; type=&quot;password&quot; minlength=&quot;12&quot; autocomplete=&quot;new-password&quot; required&gt;&lt;label class=&quot;field&quot; for=&quot;confirmPassword&quot;&gt;Yeni şifre tekrar&lt;/label&gt;&lt;input id=&quot;confirmPassword&quot; type=&quot;password&quot; minlength=&quot;12&quot; autocomplete=&quot;new-password&quot; required&gt;&lt;button id=&quot;changeButton&quot; type=&quot;submit&quot;&gt;Yeni şifreyi kaydet&lt;/button&gt;&lt;/form&gt;&lt;div class=&quot;status&quot; id=&quot;changeStatus&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;&lt;button class=&quot;secondary&quot; id=&quot;cancelChange&quot; type=&quot;button&quot;&gt;Geri dön&lt;/button&gt;&lt;/section&gt;
+&lt;section class=&quot;panel hidden&quot; id=&quot;setupPanel&quot;&gt;&lt;div class=&quot;eyebrow&quot;&gt;KURULUM GEREKLİ&lt;/div&gt;&lt;h1&gt;Bağlantı bekleniyor.&lt;/h1&gt;&lt;p&gt;Giriş sisteminin çalışması için bu dosyanın sonundaki &lt;strong&gt;SUPABASE_URL&lt;/strong&gt; ve &lt;strong&gt;SUPABASE_PUBLISHABLE_KEY&lt;/strong&gt; alanlarını kendi projenizin herkese açık bağlantı bilgileriyle doldurun.&lt;/p&gt;&lt;/section&gt;
+&lt;/main&gt;&lt;footer&gt;© Doç. Dr. Serdar Demir · Yetkili erişim&lt;/footer&gt;
+&lt;script type=&quot;module&quot;&gt;
+import {createClient} from &#x27;https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm&#x27;;
+// SADECE Project URL ve publishable (veya legacy anon) key girin.
+// service_role, secret key veya veritabanı şifresini ASLA buraya yazmayın.
+const SUPABASE_URL = &#x27;https://fdperhawmaihcntidfql.supabase.co&#x27;;
+const SUPABASE_PUBLISHABLE_KEY = &#x27;sb_publishable_n-8h8poWT-Nf8iQbHj37Pw_XFgHKXhZ&#x27;;
+const $=id=&gt;document.getElementById(id);
+const panels=[&#x27;loginPanel&#x27;,&#x27;welcomePanel&#x27;,&#x27;changePanel&#x27;,&#x27;setupPanel&#x27;];
+function show(id){panels.forEach(p=&gt;$(p).classList.toggle(&#x27;hidden&#x27;,p!==id));}
+function status(id,message,ok=false){$(id).textContent=message;$(id).classList.toggle(&#x27;success&#x27;,ok);}
+const configured=SUPABASE_URL.startsWith(&#x27;https://&#x27;) &amp;&amp; !SUPABASE_URL.includes(&#x27;BURAYA_&#x27;) &amp;&amp; !SUPABASE_PUBLISHABLE_KEY.includes(&#x27;BURAYA_&#x27;);
+if(!configured){show(&#x27;setupPanel&#x27;);}else{
+ const supabase=createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+ async function refresh(){const {data:{user},error}=await supabase.auth.getUser();if(error||!user){show(&#x27;loginPanel&#x27;);return;} $(&#x27;accountLabel&#x27;).textContent=&#x27;Giriş yapan hesap: &#x27;+(user.email||&#x27;Personel&#x27;);show(&#x27;welcomePanel&#x27;);}
+ $(&#x27;loginForm&#x27;).addEventListener(&#x27;submit&#x27;,async e=&gt;{e.preventDefault();$(&#x27;loginButton&#x27;).disabled=true;status(&#x27;loginStatus&#x27;,&#x27;&#x27;);try{const {error}=await supabase.auth.signInWithPassword({email:$(&#x27;email&#x27;).value.trim(),password:$(&#x27;password&#x27;).value});if(error)throw error;$(&#x27;password&#x27;).value=&#x27;&#x27;;await refresh();}catch(err){status(&#x27;loginStatus&#x27;,&#x27;Giriş yapılamadı. E-posta adresini ve şifreni kontrol et.&#x27;);}finally{$(&#x27;loginButton&#x27;).disabled=false;}});
+ $(&#x27;logout&#x27;).addEventListener(&#x27;click&#x27;,async()=&gt;{await supabase.auth.signOut();show(&#x27;loginPanel&#x27;);});
+ $(&#x27;showChange&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{status(&#x27;changeStatus&#x27;,&#x27;&#x27;);show(&#x27;changePanel&#x27;);});
+ $(&#x27;cancelChange&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;show(&#x27;welcomePanel&#x27;));
+ $(&#x27;changeForm&#x27;).addEventListener(&#x27;submit&#x27;,async e=&gt;{e.preventDefault();if($(&#x27;newPassword&#x27;).value!==$(&#x27;confirmPassword&#x27;).value){status(&#x27;changeStatus&#x27;,&#x27;Şifreler eşleşmiyor.&#x27;);return;}$(&#x27;changeButton&#x27;).disabled=true;try{const {error}=await supabase.auth.updateUser({password:$(&#x27;newPassword&#x27;).value});if(error)throw error;$(&#x27;changeForm&#x27;).reset();status(&#x27;changeStatus&#x27;,&#x27;Şifreniz güncellendi.&#x27;,true);}catch(err){status(&#x27;changeStatus&#x27;,&#x27;Şifre güncellenemedi. Tekrar deneyin.&#x27;);}finally{$(&#x27;changeButton&#x27;).disabled=false;}});
+ await refresh();
+}
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+"></iframe>
+</div>
+<script>
+(function(){
+ const overlay=document.getElementById('professionalOverlay');
+ const close=document.getElementById('professionalClose');
+ function sync(){const active=location.hash==='#profesyonel';overlay.classList.toggle('active',active);document.body.style.overflow=active?'hidden':'';if(active)close.focus();}
+ close.addEventListener('click',()=>{history.replaceState(null,'',location.pathname+location.search+'#anasayfa');sync();});
+ window.addEventListener('hashchange',sync);sync();
+})();
+</script>
 </body>
 
 </html>
