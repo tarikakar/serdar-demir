@@ -1,0 +1,3432 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Doç. Dr. Serdar Demir | Kardiyoloji</title>
+
+    <meta
+        name="description"
+        content="Doç. Dr. Serdar Demir - Kardiyoloji, kalp ritim bozuklukları, elektrofizyoloji, kateter ablasyonu ve kardiyak cihazlar hakkında bilgilendirme."
+    >
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Doç. Dr. Serdar Demir">
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- MEVCUT ANA CSS DOSYAN -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           SD INTRO
+        ===================================================== */
+
+        .sd-intro {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #f7fafc;
+
+            pointer-events: none;
+
+            animation:
+                sdIntroExit
+                .8s
+                cubic-bezier(.76, 0, .24, 1)
+                2.25s
+                forwards;
+        }
+
+
+        .sd-intro-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .sd-intro-logo {
+            position: relative;
+
+            width: 200px;
+            height: 115px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family:
+                "Libre Caslon Display",
+                Georgia,
+                serif;
+
+            color: #092944;
+        }
+
+
+        .sd-letter {
+            position: relative;
+
+            display: inline-block;
+
+            font-size: 80px;
+            line-height: 1;
+            font-weight: 400;
+
+            opacity: 0;
+
+            filter: blur(5px);
+
+            transform:
+                translateY(12px)
+                scale(.97);
+        }
+
+
+        .sd-s {
+            animation:
+                sdLetterReveal
+                .75s
+                cubic-bezier(.16, 1, .3, 1)
+                .18s
+                forwards;
+        }
+
+
+        .sd-d {
+            margin-left: -5px;
+
+            animation:
+                sdLetterReveal
+                .75s
+                cubic-bezier(.16, 1, .3, 1)
+                .38s
+                forwards;
+        }
+
+
+        /* =====================================================
+           INTRO ECG
+        ===================================================== */
+
+        .sd-pulse {
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            width: 190px;
+            height: 42px;
+
+            overflow: visible;
+
+            transform:
+                translate(-50%, -43%);
+        }
+
+
+        .sd-pulse path {
+            fill: none;
+
+            stroke: #d95d63;
+            stroke-width: 1.55;
+
+            stroke-linecap: round;
+            stroke-linejoin: round;
+
+            stroke-dasharray: 280;
+            stroke-dashoffset: 280;
+
+            opacity: 0;
+
+            animation:
+                sdPulseReveal
+                1.05s
+                cubic-bezier(.4, 0, .2, 1)
+                .78s
+                forwards;
+        }
+
+
+        .sd-intro-name {
+            margin-top: 12px;
+
+            color: #092944;
+
+            font-family:
+                "DM Sans",
+                Arial,
+                sans-serif;
+
+            font-size: 10px;
+            font-weight: 600;
+
+            letter-spacing: 3.3px;
+
+            opacity: 0;
+
+            transform:
+                translateY(7px);
+
+            animation:
+                sdTextReveal
+                .55s
+                ease
+                1.18s
+                forwards;
+        }
+
+
+        .sd-intro-specialty {
+            margin-top: 8px;
+
+            color: #8294a1;
+
+            font-family:
+                "DM Sans",
+                Arial,
+                sans-serif;
+
+            font-size: 8px;
+            font-weight: 500;
+
+            letter-spacing: 3.2px;
+
+            opacity: 0;
+
+            transform:
+                translateY(5px);
+
+            animation:
+                sdTextReveal
+                .55s
+                ease
+                1.34s
+                forwards;
+        }
+
+
+        @keyframes sdLetterReveal {
+
+            0% {
+                opacity: 0;
+
+                filter: blur(5px);
+
+                transform:
+                    translateY(12px)
+                    scale(.97);
+            }
+
+            100% {
+                opacity: 1;
+
+                filter: blur(0);
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+        }
+
+
+        @keyframes sdPulseReveal {
+
+            0% {
+                opacity: 0;
+                stroke-dashoffset: 280;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+                stroke-dashoffset: 0;
+            }
+
+        }
+
+
+        @keyframes sdTextReveal {
+
+            from {
+                opacity: 0;
+                transform: translateY(7px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        @keyframes sdIntroExit {
+
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-18px);
+            }
+
+        }
+
+
+        /* =====================================================
+           MAP
+        ===================================================== */
+
+        .location-map-wrap {
+            position: relative;
+
+            width: 100%;
+            height: 235px;
+
+            overflow: hidden;
+
+            border-radius: 10px;
+
+            background: #e8f0f4;
+
+            border:
+                1px solid
+                rgba(9, 41, 68, .08);
+
+            transition:
+                opacity 1s cubic-bezier(.16, 1, .3, 1),
+                transform 1s cubic-bezier(.16, 1, .3, 1);
+        }
+
+
+        .location-map-wrap iframe {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            border: 0;
+
+            filter:
+                saturate(.68)
+                contrast(.94)
+                brightness(1.04);
+
+            transition:
+                filter .6s ease,
+                transform 1s cubic-bezier(.16, 1, .3, 1);
+        }
+
+
+        .map-open-link {
+            position: absolute;
+
+            right: 12px;
+            bottom: 12px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            min-height: 34px;
+
+            padding:
+                0
+                14px;
+
+            border:
+                1px solid
+                rgba(9, 41, 68, .10);
+
+            border-radius: 30px;
+
+            background:
+                rgba(255, 255, 255, .94);
+
+            backdrop-filter: blur(8px);
+
+            color: #092944;
+
+            font-family:
+                "DM Sans",
+                Arial,
+                sans-serif;
+
+            font-size: 9px;
+            font-weight: 600;
+
+            text-decoration: none;
+
+            box-shadow:
+                0
+                6px
+                18px
+                rgba(7, 37, 61, .08);
+
+            transition:
+                transform .2s ease,
+                background .2s ease,
+                box-shadow .2s ease;
+        }
+
+
+        .map-open-link:hover {
+            transform: translateY(-1px);
+
+            background: #ffffff;
+
+            box-shadow:
+                0
+                8px
+                22px
+                rgba(7, 37, 61, .12);
+        }
+
+
+        .contact-address {
+            grid-column: 1 / -1;
+        }
+
+
+        .contact-address strong {
+            max-width: 430px;
+            line-height: 1.55;
+        }
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
+
+        .reveal-on-scroll {
+            opacity: 0;
+
+            transform:
+                translateY(22px);
+
+            filter:
+                blur(2px);
+
+            transition:
+                opacity .85s cubic-bezier(.16, 1, .3, 1),
+                transform .85s cubic-bezier(.16, 1, .3, 1),
+                filter .85s cubic-bezier(.16, 1, .3, 1);
+
+            will-change:
+                opacity,
+                transform;
+        }
+
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+            filter: blur(0);
+        }
+
+
+        h2.reveal-on-scroll {
+            transition-delay: .06s;
+        }
+
+
+        /* =====================================================
+           PATIENT CARDS
+        ===================================================== */
+
+        .patient-card {
+            position: relative;
+
+            transition:
+                transform .45s cubic-bezier(.16, 1, .3, 1),
+                box-shadow .45s cubic-bezier(.16, 1, .3, 1),
+                border-color .45s ease;
+        }
+
+
+        .patient-card.reveal-on-scroll {
+            transform:
+                translateY(28px);
+        }
+
+
+        .patient-card.reveal-on-scroll.is-visible {
+            transform:
+                translateY(0);
+        }
+
+
+        .patient-card:nth-child(1) {
+            transition-delay: 0s;
+        }
+
+
+        .patient-card:nth-child(2) {
+            transition-delay: .10s;
+        }
+
+
+        .patient-card:nth-child(3) {
+            transition-delay: .20s;
+        }
+
+
+        .patient-card-bottom span,
+        .text-link span,
+        .header-button span {
+            display: inline-block;
+
+            transition:
+                transform .3s
+                cubic-bezier(.16, 1, .3, 1);
+        }
+
+
+        .patient-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .patient-image::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            pointer-events: none;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    transparent 20%,
+                    rgba(255,255,255,.08) 48%,
+                    transparent 75%
+                );
+
+            transform:
+                translateX(-130%);
+
+            transition:
+                transform .8s
+                cubic-bezier(.16, 1, .3, 1);
+        }
+
+
+        /* =====================================================
+           ECG CARD
+        ===================================================== */
+
+        .rhythm-image svg path {
+            stroke-dasharray: 800;
+            stroke-dashoffset: 800;
+
+            animation:
+                patientECG
+                4.8s
+                cubic-bezier(.4, 0, .2, 1)
+                infinite;
+        }
+
+
+        @keyframes patientECG {
+
+            0% {
+                stroke-dashoffset: 800;
+                opacity: .15;
+            }
+
+            12% {
+                opacity: 1;
+            }
+
+            45% {
+                stroke-dashoffset: 0;
+                opacity: 1;
+            }
+
+            72% {
+                stroke-dashoffset: 0;
+                opacity: .85;
+            }
+
+            100% {
+                stroke-dashoffset: -800;
+                opacity: .15;
+            }
+
+        }
+
+
+        /* =====================================================
+           ABLATION HEART
+        ===================================================== */
+
+        .mini-heart {
+            transform-origin: center;
+
+            animation:
+                subtleHeartBeat
+                3.6s
+                ease-in-out
+                infinite;
+        }
+
+
+        @keyframes subtleHeartBeat {
+
+            0%,
+            76%,
+            100% {
+                transform: scale(1);
+            }
+
+            80% {
+                transform: scale(1.055);
+            }
+
+            84% {
+                transform: scale(1);
+            }
+
+            88% {
+                transform: scale(1.035);
+            }
+
+            92% {
+                transform: scale(1);
+            }
+
+        }
+
+
+        /* =====================================================
+           IMAGE MICRO MOTION
+        ===================================================== */
+
+        .hero-photo img,
+        .about-image img {
+            transition:
+                transform 1.1s
+                cubic-bezier(.16, 1, .3, 1);
+        }
+
+
+        .hero-quote,
+        .paper,
+        .contact-item {
+            transition:
+                transform .45s
+                cubic-bezier(.16, 1, .3, 1),
+                box-shadow .45s ease;
+        }
+
+
+        /* =====================================================
+           MAP REVEAL
+        ===================================================== */
+
+        .location-map-wrap.map-reveal {
+            opacity: 1;
+
+            transform:
+                scale(1.025)
+                translateY(10px);
+        }
+
+
+        .location-map-wrap.map-reveal.map-visible {
+            opacity: 1;
+
+            transform:
+                scale(1)
+                translateY(0);
+        }
+
+
+        /* =====================================================
+           DESKTOP HOVERS
+        ===================================================== */
+
+        @media (hover: hover) and (pointer: fine) {
+
+            .patient-card:hover {
+                transform:
+                    translateY(-6px);
+
+                box-shadow:
+                    0 24px 55px
+                    rgba(7, 37, 61, .12);
+            }
+
+
+            .patient-card:hover
+            .patient-card-bottom span,
+
+            .text-link:hover span {
+                transform:
+                    translateX(6px);
+            }
+
+
+            .header-button:hover span {
+                transform:
+                    translateX(4px);
+            }
+
+
+            .patient-card:hover
+            .patient-image::after {
+                transform:
+                    translateX(130%);
+            }
+
+
+            .patient-card:hover
+            .pacemaker {
+                transform:
+                    translateY(-3px)
+                    rotate(-1deg);
+            }
+
+
+            .hero-image-area:hover
+            .hero-photo img,
+
+            .about-image:hover img {
+                transform:
+                    scale(1.02);
+            }
+
+
+            .hero-image-area:hover
+            .hero-quote {
+                transform:
+                    translateY(-3px);
+            }
+
+
+            .publication-visual:hover
+            .paper-one {
+                transform:
+                    translateY(-4px)
+                    rotate(-1deg);
+            }
+
+
+            .publication-visual:hover
+            .paper-two {
+                transform:
+                    translateY(-7px)
+                    rotate(.7deg);
+            }
+
+
+            .publication-visual:hover
+            .paper-three {
+                transform:
+                    translateY(-3px)
+                    rotate(1.3deg);
+            }
+
+
+            .location-map-wrap:hover
+            iframe {
+                filter:
+                    saturate(.82)
+                    contrast(.96)
+                    brightness(1.02);
+
+                transform:
+                    scale(1.008);
+            }
+
+
+            .contact-item:hover {
+                transform:
+                    translateX(4px);
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .location-map-wrap {
+                height: 225px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .sd-intro-logo {
+                width: 165px;
+                height: 95px;
+            }
+
+
+            .sd-letter {
+                font-size: 66px;
+            }
+
+
+            .sd-pulse {
+                width: 160px;
+            }
+
+
+            .sd-intro-name {
+                font-size: 9px;
+                letter-spacing: 2.6px;
+            }
+
+
+            .sd-intro-specialty {
+                font-size: 7px;
+                letter-spacing: 2.5px;
+            }
+
+
+            .location-map-wrap {
+                height: 210px;
+                border-radius: 8px;
+            }
+
+
+            .map-open-link {
+                right: 10px;
+                bottom: 10px;
+            }
+
+
+            .contact-address {
+                grid-column: auto;
+            }
+
+
+            .reveal-on-scroll {
+                transform:
+                    translateY(15px);
+            }
+
+
+            .patient-card.reveal-on-scroll {
+                transform:
+                    translateY(18px);
+            }
+
+
+            .patient-card.reveal-on-scroll.is-visible {
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+
+        /* =====================================================
+           ACCESSIBILITY
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .sd-intro {
+                display: none;
+            }
+
+
+            .reveal-on-scroll,
+            .reveal-on-scroll.is-visible,
+            .location-map-wrap,
+            .location-map-wrap.map-reveal,
+            .location-map-wrap.map-visible {
+
+                opacity: 1 !important;
+
+                transform:
+                    none !important;
+
+                filter:
+                    none !important;
+
+                transition:
+                    none !important;
+            }
+
+
+            .rhythm-image svg path,
+            .mini-heart {
+
+                animation:
+                    none !important;
+            }
+
+        }
+
+
+        /* COMPACT PREMIUM VIDEO */
+
+        .featured-video-card-second {
+            margin-top: 28px;
+        }
+
+        .featured-video { padding:72px 0; background:#f7fafc; }
+        .featured-video-card {
+            display:grid; grid-template-columns:minmax(0,1fr) minmax(360px,470px);
+            align-items:center; gap:64px; padding:42px 46px;
+            border:1px solid rgba(9,41,68,.08); border-radius:16px;
+            background:#fff; box-shadow:0 20px 55px rgba(7,37,61,.06);
+        }
+        .featured-video-copy { max-width:560px; }
+        .featured-video-copy h2 {
+            margin:14px 0 0; color:#092944;
+            font-family:"Libre Caslon Display",Georgia,serif;
+            font-size:clamp(34px,3.3vw,49px); font-weight:400;
+            line-height:1.06; letter-spacing:-.8px;
+        }
+        .featured-video-copy p {
+            max-width:500px; margin-top:18px; color:#52697a;
+            font-size:12px; line-height:1.8;
+        }
+        .featured-video-link {
+            display:inline-flex; align-items:center; gap:12px; margin-top:22px;
+            padding-bottom:5px; border-bottom:1px solid rgba(9,41,68,.22);
+            color:#092944; font-size:10px; font-weight:600;
+        }
+        .featured-video-link span { transition:transform .25s ease; }
+        .featured-video-link:hover span { transform:translate(3px,-3px); }
+        .featured-video-media {
+            position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
+            border-radius:11px; background:#092944;
+            box-shadow:0 16px 38px rgba(7,37,61,.14);
+        }
+        .featured-video-media iframe {
+            position:absolute; inset:0; width:100%; height:100%; border:0;
+        }
+        @media (max-width:850px) {
+            .featured-video-card { grid-template-columns:1fr; gap:30px; padding:36px; }
+            .featured-video-media { max-width:620px; }
+        }
+        @media (max-width:600px) {
+            .featured-video { padding:55px 0; }
+            .featured-video-card { padding:28px 24px; border-radius:12px; }
+            .featured-video-copy h2 { font-size:34px; }
+        }
+
+
+        /* =====================================================
+           ABOUT — WHITE COAT PORTRAIT
+        ===================================================== */
+
+        .about-images-portrait {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-doctor-whitecoat {
+            width: min(100%, 520px);
+            height: 440px;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #eef4f7;
+            box-shadow: 0 24px 60px rgba(7, 37, 61, .10);
+        }
+
+        .about-doctor-whitecoat img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 42% center;
+            display: block;
+        }
+
+        @media (max-width: 850px) {
+            .about-doctor-whitecoat {
+                width: 100%;
+                max-width: 620px;
+                height: 430px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .about-doctor-whitecoat {
+                height: 380px;
+                border-radius: 10px;
+            }
+        }
+
+
+        /* =====================================================
+           EXPERTISE
+        ===================================================== */
+
+        .expertise {
+            position: relative;
+            overflow: hidden;
+            background: #eef6fa;
+        }
+
+        .expertise::before {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            top: -240px;
+            right: -180px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .55);
+            pointer-events: none;
+        }
+
+        .expertise-heading {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+            align-items: end;
+            gap: 70px;
+            margin-bottom: 48px;
+        }
+
+        .expertise-heading h2 {
+            margin: 14px 0 0;
+            color: #092944;
+            font-family: "Libre Caslon Display", Georgia, serif;
+            font-size: clamp(40px, 4.5vw, 62px);
+            font-weight: 400;
+            line-height: 1.02;
+            letter-spacing: -1px;
+        }
+
+        .expertise-heading > p {
+            max-width: 430px;
+            margin: 0 0 5px;
+            color: #52697a;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .expertise-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid rgba(9, 41, 68, .11);
+            border-left: 1px solid rgba(9, 41, 68, .11);
+        }
+
+        .expertise-card {
+            position: relative;
+            min-height: 260px;
+            padding: 30px 30px 28px;
+            overflow: hidden;
+            border-right: 1px solid rgba(9, 41, 68, .11);
+            border-bottom: 1px solid rgba(9, 41, 68, .11);
+            background: rgba(255, 255, 255, .48);
+            transition:
+                transform .35s cubic-bezier(.16, 1, .3, 1),
+                background .35s ease,
+                box-shadow .35s ease;
+        }
+
+        .expertise-number {
+            position: absolute;
+            top: 22px;
+            right: 24px;
+            color: rgba(9, 41, 68, .35);
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 1.4px;
+        }
+
+        .expertise-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 42px;
+            border: 1px solid rgba(9, 41, 68, .13);
+            border-radius: 50%;
+            color: #315f7c;
+            background: rgba(255, 255, 255, .58);
+            font-family: Georgia, serif;
+            font-size: 20px;
+        }
+
+        .expertise-card h3 {
+            margin: 0;
+            color: #092944;
+            font-family: "Libre Caslon Display", Georgia, serif;
+            font-size: 26px;
+            font-weight: 400;
+            line-height: 1.08;
+        }
+
+        .expertise-card p {
+            max-width: 280px;
+            margin: 13px 0 0;
+            color: #52697a;
+            font-size: 11px;
+            line-height: 1.75;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .expertise-card:hover {
+                z-index: 2;
+                transform: translateY(-4px);
+                background: #ffffff;
+                box-shadow: 0 22px 48px rgba(7, 37, 61, .08);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .expertise-heading {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .expertise-heading {
+                margin-bottom: 34px;
+            }
+
+            .expertise-heading h2 {
+                font-size: 39px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .expertise-card {
+                min-height: 220px;
+                padding: 26px 25px;
+            }
+
+            .expertise-icon {
+                margin-bottom: 34px;
+            }
+        }
+
+
+        /* =====================================================
+           EXPERTISE — PREMIUM EDITORIAL OVERRIDE
+        ===================================================== */
+
+        .expertise {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 88% 12%, rgba(49,95,124,.10), transparent 27%),
+                linear-gradient(180deg, #f5fafc 0%, #eaf3f7 100%);
+        }
+
+        .expertise::before {
+            content: "";
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            right: -280px;
+            top: -270px;
+            border: 1px solid rgba(9,41,68,.07);
+            border-radius: 50%;
+            background: transparent;
+        }
+
+        .expertise::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: -160px;
+            top: -160px;
+            border: 1px solid rgba(9,41,68,.055);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .expertise-heading {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+            align-items: end;
+            gap: 80px;
+            margin-bottom: 54px;
+        }
+
+        .expertise-heading h2 {
+            margin: 14px 0 0;
+            color: #092944;
+            font-family: "Libre Caslon Display", Georgia, serif;
+            font-size: clamp(42px, 4.6vw, 64px);
+            font-weight: 400;
+            line-height: .99;
+            letter-spacing: -1.2px;
+        }
+
+        .expertise-heading > p {
+            max-width: 410px;
+            margin: 0 0 6px;
+            padding-left: 22px;
+            border-left: 1px solid rgba(9,41,68,.16);
+            color: #52697a;
+            font-size: 12px;
+            line-height: 1.85;
+        }
+
+        .expertise-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            border: 0;
+        }
+
+        .expertise-card {
+            position: relative;
+            isolation: isolate;
+            min-height: 286px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 26px 27px 28px;
+            overflow: hidden;
+            border: 1px solid rgba(9,41,68,.075);
+            border-radius: 14px;
+            background: rgba(255,255,255,.74);
+            box-shadow:
+                0 1px 0 rgba(255,255,255,.95) inset,
+                0 14px 35px rgba(7,37,61,.035);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition:
+                transform .45s cubic-bezier(.16,1,.3,1),
+                box-shadow .45s ease,
+                border-color .45s ease,
+                background .45s ease;
+        }
+
+        .expertise-card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 180px;
+            height: 180px;
+            right: -105px;
+            top: -105px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(49,95,124,.10), rgba(49,95,124,0) 68%);
+            opacity: .45;
+            transform: scale(.85);
+            transition: transform .55s cubic-bezier(.16,1,.3,1), opacity .45s ease;
+        }
+
+        .expertise-card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .expertise-icon {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            margin: 0;
+            border: 1px solid rgba(9,41,68,.105);
+            border-radius: 50%;
+            background: linear-gradient(145deg, rgba(255,255,255,.96), rgba(238,246,250,.82));
+            box-shadow: 0 8px 22px rgba(7,37,61,.055);
+            color: #315f7c;
+            transition:
+                transform .45s cubic-bezier(.16,1,.3,1),
+                background .35s ease,
+                color .35s ease;
+        }
+
+        .expertise-icon svg {
+            width: 25px;
+            height: 25px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.45;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .expertise-number {
+            position: static;
+            padding-top: 4px;
+            color: rgba(9,41,68,.32);
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+        }
+
+        .expertise-card-content {
+            margin-top: 52px;
+        }
+
+        .expertise-card h3 {
+            margin: 0;
+            color: #092944;
+            font-family: "Libre Caslon Display", Georgia, serif;
+            font-size: 27px;
+            font-weight: 400;
+            line-height: 1.08;
+            letter-spacing: -.25px;
+        }
+
+        .expertise-card p {
+            max-width: 285px;
+            margin: 13px 0 0;
+            color: #627887;
+            font-size: 11px;
+            line-height: 1.75;
+        }
+
+        .expertise-line {
+            position: absolute;
+            left: 27px;
+            right: 27px;
+            bottom: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #315f7c 0%, rgba(49,95,124,.12) 70%, transparent 100%);
+            transform: scaleX(.14);
+            transform-origin: left;
+            opacity: .42;
+            transition: transform .5s cubic-bezier(.16,1,.3,1), opacity .4s ease;
+        }
+
+        @media (hover:hover) and (pointer:fine) {
+            .expertise-card:hover {
+                transform: translateY(-7px);
+                border-color: rgba(9,41,68,.13);
+                background: rgba(255,255,255,.94);
+                box-shadow:
+                    0 1px 0 rgba(255,255,255,1) inset,
+                    0 25px 55px rgba(7,37,61,.09);
+            }
+
+            .expertise-card:hover::before {
+                transform: scale(1.3);
+                opacity: .9;
+            }
+
+            .expertise-card:hover .expertise-icon {
+                transform: translateY(-2px) rotate(-3deg);
+                color: #092944;
+                background: #fff;
+            }
+
+            .expertise-card:hover .expertise-line {
+                transform: scaleX(1);
+                opacity: .8;
+            }
+        }
+
+        @media (max-width:900px) {
+            .expertise-heading {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .expertise-heading > p {
+                padding-left: 18px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width:600px) {
+            .expertise-heading {
+                margin-bottom: 36px;
+            }
+
+            .expertise-heading h2 {
+                font-size: 40px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+                gap: 11px;
+            }
+
+            .expertise-card {
+                min-height: 238px;
+                padding: 24px;
+            }
+
+            .expertise-card-content {
+                margin-top: 38px;
+            }
+
+            .expertise-line {
+                left: 24px;
+                right: 24px;
+            }
+        }
+
+
+        /* =====================================================
+           SUBTLE SITE CREDIT
+        ===================================================== */
+
+        .site-credit {
+            width: min(1180px, 88%);
+            margin: 22px auto 0;
+            padding-top: 17px;
+            border-top: 1px solid rgba(255, 255, 255, .075);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 7px;
+            color: rgba(255, 255, 255, .32);
+            font-size: 8px;
+            font-weight: 400;
+            letter-spacing: .55px;
+            line-height: 1.4;
+        }
+
+        .site-credit-name {
+            color: rgba(255, 255, 255, .48);
+            font-weight: 500;
+        }
+
+        .site-credit-separator {
+            opacity: .5;
+        }
+
+        @media (max-width: 600px) {
+            .site-credit {
+                justify-content: center;
+                margin-top: 18px;
+                padding-top: 15px;
+                font-size: 7.5px;
+            }
+        }
+
+
+        /* =====================================================
+           PREMIUM CUSTOM VIDEO COVERS
+        ===================================================== */
+
+        .premium-media {
+            background: #dfeaf1;
+        }
+
+        .premium-video-cover {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            overflow: hidden;
+            border: 0;
+            border-radius: inherit;
+            cursor: pointer;
+            text-align: left;
+            color: #092944;
+            background:
+                radial-gradient(circle at 88% 12%, rgba(255,255,255,.92), transparent 28%),
+                linear-gradient(120deg, #edf5f9 0%, #d8e7ef 53%, #a9c2d1 100%);
+            isolation: isolate;
+        }
+
+        .premium-video-cover::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(245,250,252,.97) 0%, rgba(238,246,250,.86) 38%, rgba(216,232,241,.18) 68%, rgba(9,41,68,.08) 100%);
+            pointer-events: none;
+        }
+
+        .premium-video-cover::after {
+            content: "";
+            position: absolute;
+            z-index: 2;
+            width: 470px;
+            height: 470px;
+            left: -260px;
+            bottom: -330px;
+            border: 1px solid rgba(255,255,255,.75);
+            border-radius: 50%;
+            box-shadow: 0 0 0 34px rgba(255,255,255,.11);
+            pointer-events: none;
+        }
+
+        .cover-copy {
+            position: absolute;
+            z-index: 4;
+            top: 23%;
+            left: 8%;
+            width: 45%;
+            pointer-events: none;
+        }
+
+        .cover-copy small {
+            display: block;
+            margin-bottom: 13px;
+            color: #315f7c;
+            font-size: 7px;
+            font-weight: 700;
+            letter-spacing: 2.3px;
+        }
+
+        .cover-copy strong {
+            display: block;
+            color: #092944;
+            font-family: "Libre Caslon Display", Georgia, serif;
+            font-size: clamp(19px, 2vw, 29px);
+            font-weight: 400;
+            line-height: 1.05;
+            letter-spacing: -.4px;
+        }
+
+        .medical-art {
+            position: absolute;
+            z-index: 0;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .heart-shape {
+            fill: rgba(204,225,236,.19);
+            stroke: url(#heartStroke);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            filter: drop-shadow(0 9px 20px rgba(9,41,68,.12));
+        }
+
+        .ecg {
+            fill: none;
+            stroke: rgba(242,250,253,.68);
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .neck-outline {
+            fill: none;
+            stroke: rgba(240,248,252,.48);
+            stroke-width: 2;
+        }
+
+        .arteries {
+            fill: none;
+            stroke: url(#arteryStroke);
+            stroke-width: 5;
+            stroke-linecap: round;
+            filter: drop-shadow(0 0 8px rgba(201,89,78,.28));
+        }
+
+        .carotid-ecg {
+            opacity: .38;
+        }
+
+        .premium-play {
+            position: absolute;
+            z-index: 6;
+            left: 58%;
+            top: 50%;
+            width: 72px;
+            height: 72px;
+            display: grid;
+            place-items: center;
+            border: 2px solid rgba(255,255,255,.88);
+            border-radius: 50%;
+            background: rgba(9,41,68,.92);
+            box-shadow:
+                0 14px 35px rgba(7,37,61,.20),
+                0 0 0 10px rgba(255,255,255,.08);
+            transform: translate(-50%, -50%);
+            transition:
+                transform .4s cubic-bezier(.16,1,.3,1),
+                background .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .premium-play span {
+            width: 0;
+            height: 0;
+            margin-left: 5px;
+            border-top: 9px solid transparent;
+            border-bottom: 9px solid transparent;
+            border-left: 14px solid #fff;
+        }
+
+        .premium-video-cover:hover .premium-play {
+            transform: translate(-50%, -50%) scale(1.08);
+            background: #0b3556;
+            box-shadow:
+                0 18px 42px rgba(7,37,61,.25),
+                0 0 0 13px rgba(255,255,255,.10);
+        }
+
+        .premium-video-cover:hover .medical-art {
+            transform: scale(1.015);
+        }
+
+        .medical-art {
+            transition: transform .65s cubic-bezier(.16,1,.3,1);
+        }
+
+        .premium-media iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 600px) {
+            .cover-copy {
+                top: 18%;
+                left: 7%;
+                width: 49%;
+            }
+
+            .cover-copy small {
+                margin-bottom: 9px;
+                font-size: 6px;
+                letter-spacing: 1.6px;
+            }
+
+            .cover-copy strong {
+                font-size: 18px;
+            }
+
+            .premium-play {
+                left: 62%;
+                width: 58px;
+                height: 58px;
+            }
+
+            .heart-art,
+            .carotid-art {
+                transform: translateX(4%);
+            }
+        }
+
+
+        /* PROFESSIONAL AREA — HEADER ENTRY */
+        .professional-nav-link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: #315f7c !important;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: .25px;
+            white-space: nowrap;
+        }
+
+        .professional-nav-link::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border: 1px solid rgba(49,95,124,.55);
+            border-radius: 50%;
+        }
+
+        .professional-nav-link:hover {
+            color: #092944 !important;
+        }
+
+        @media (max-width: 850px) {
+            .professional-nav-link {
+                font-size: 10px;
+            }
+        }
+
+
+        /* =====================================================
+           PROFESSIONAL NAV — REFINED
+        ===================================================== */
+
+        .professional-nav-link {
+            position: relative;
+            display: inline-flex !important;
+            align-items: center;
+            gap: 6px !important;
+            margin-left: 3px;
+            padding: 8px 13px 8px 15px !important;
+            border: 0 !important;
+            border-left: 1px solid rgba(9, 41, 68, .10) !important;
+            border-radius: 0 !important;
+            color: rgba(9, 41, 68, .62) !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            font-size: 8.5px !important;
+            font-weight: 500 !important;
+            letter-spacing: .15px !important;
+            line-height: 1 !important;
+            white-space: nowrap;
+            transition: color .25s ease, opacity .25s ease !important;
+        }
+
+        .professional-nav-link::before,
+        .professional-nav-link::after {
+            content: none !important;
+            display: none !important;
+        }
+
+        .professional-nav-link svg {
+            width: 12px;
+            height: 12px;
+            flex: 0 0 auto;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.35;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: .72;
+            transition: opacity .25s ease, transform .25s ease;
+        }
+
+        .professional-nav-link:hover {
+            color: #092944 !important;
+            background: transparent !important;
+            transform: none !important;
+        }
+
+        .professional-nav-link:hover svg {
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 1100px) {
+            .professional-nav-link {
+                padding-left: 10px !important;
+                padding-right: 8px !important;
+                font-size: 8px !important;
+            }
+        }
+
+        /* Harita her durumda görünür kalsın. */
+        .location-map-wrap, .location-map-wrap.map-reveal {
+            opacity: 1 !important;
+            transform: none !important;
+            visibility: visible !important;
+        }
+
+
+/* Keep the quotation BELOW the portrait on phones */
+@media (max-width:850px) {
+  .hero-image-area { display:flex !important; flex-direction:column !important; align-items:stretch !important; gap:14px !important; height:auto !important; overflow:visible !important; }
+  .hero-photo { position:relative !important; inset:auto !important; width:100% !important; height:auto !important; overflow:hidden !important; }
+  .hero-quote { position:relative !important; inset:auto !important; top:auto !important; right:auto !important; bottom:auto !important; left:auto !important; transform:none !important; margin:0 !important; width:100% !important; max-width:100% !important; box-sizing:border-box !important; z-index:1 !important; }
+  .hero-quote p { max-width:100%; }
+}
+/* MOBILE FIRST REFINEMENTS — Instagram / in-app browser */
+html { scroll-behavior:smooth; scroll-padding-top:82px; }
+body { overflow-x:hidden; }
+img, video, svg, iframe { max-width:100%; }
+img { height:auto; }
+button, a, input { -webkit-tap-highlight-color:transparent; }
+a, button { touch-action:manipulation; }
+@media (max-width:850px) {
+  .header { z-index:10000; }
+  .header-inner { position:relative; width:100%; max-width:100%; padding:0 18px; min-height:70px; gap:10px; }
+  .brand { min-width:0; flex:1 1 auto; }
+  .brand-text { min-width:0; }
+  .brand-text strong { font-size:12px; line-height:1.3; }
+  .brand-text span { font-size:10px; }
+  .brand-logo { flex-shrink:0; }
+  .header-button { display:none !important; }
+  .professional-nav-link { margin-left:auto !important; padding:10px 8px !important; border-left:0 !important; font-size:10px !important; min-height:44px; }
+  .mobile-menu { display:flex !important; flex-shrink:0; align-items:center; justify-content:center; min-width:44px; min-height:44px; cursor:pointer; }
+  #nav { display:none !important; position:absolute; top:100%; left:0; right:0; z-index:10010; width:100%; max-height:calc(100dvh - 70px); overflow-y:auto; background:#fff; padding:12px 20px 22px; border-top:1px solid #e6edf2; box-shadow:0 18px 32px rgba(9,41,68,.12); flex-direction:column; align-items:stretch; gap:0; }
+  body.mobile-nav-open #nav { display:flex !important; }
+  #nav a { display:flex; align-items:center; min-height:48px; padding:12px 5px; border-bottom:1px solid #edf2f5; font-size:13px; }
+  .container, .hero-inner { width:min(100% - 36px, 680px); max-width:100%; }
+  .hero-inner, .about-grid, .contact-grid, .academic-grid { grid-template-columns:1fr !important; gap:32px; }
+  .hero { padding-top:38px; }
+  .hero-content, .about-content, .hero-image-area { min-width:0; }
+  .hero h1 { font-size:clamp(38px,10vw,62px); line-height:1.05; overflow-wrap:break-word; }
+  .hero-description { max-width:100%; }
+  .hero-buttons { flex-wrap:wrap; gap:10px; }
+  .hero-buttons a { min-height:44px; display:inline-flex; align-items:center; }
+  .hero-photo img, .about-doctor-whitecoat img { max-width:100%; }
+  .featured-video-card { grid-template-columns:minmax(0,1fr) !important; gap:24px; padding:26px 22px; }
+  .featured-video-media { width:100%; max-width:100%; }
+  .expertise-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .site-credit { justify-content:center; }
+  #professionalClose { right:12px; top:8px; min-height:40px; }
+}
+@media (max-width:600px) {
+  .header-inner { padding:0 12px; gap:5px; }
+  .brand-logo { width:36px; height:36px; }
+  .brand-text strong { font-size:10.5px; }
+  .brand-text span { font-size:9px; }
+  .professional-nav-link { font-size:9px !important; gap:4px !important; padding:9px 5px !important; }
+  .professional-nav-link svg { width:11px; height:11px; }
+  .container, .hero-inner { width:calc(100% - 32px); }
+  .hero { padding-top:28px; }
+  .hero h1 { font-size:clamp(35px,10vw,49px); }
+  .hero-affiliations { flex-wrap:wrap; gap:14px; }
+  .about-doctor-whitecoat { height:330px; }
+  .expertise-grid { grid-template-columns:minmax(0,1fr); }
+  .expertise-card { min-height:210px; }
+  .featured-video { padding:42px 0; }
+  .featured-video-card { padding:22px 18px; }
+  .featured-video-copy h2 { font-size:clamp(29px,8vw,38px); }
+  .cover-copy strong { font-size:clamp(16px,4.5vw,22px); }
+  .premium-play { width:52px; height:52px; }
+  .site-credit { margin-top:12px; padding-top:12px; font-size:8px; opacity:.65; }
+  .site-credit-name { font-size:8px; }
+  #professionalFrame { height:100dvh; }
+  #professionalClose { right:9px; top:7px; padding:8px 10px; font-size:11px; }
+}
+@media (max-width:360px) {
+  .brand-text strong { font-size:9.5px; }
+  .professional-nav-link span { font-size:8px; }
+  .header-inner { padding:0 8px; }
+}
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SD OPENING
+===================================================== -->
+
+<div
+    class="sd-intro"
+    id="sdIntro"
+    aria-hidden="true"
+>
+
+    <div class="sd-intro-inner">
+
+        <div class="sd-intro-logo">
+
+            <span class="sd-letter sd-s">
+                S
+            </span>
+
+            <span class="sd-letter sd-d">
+                D
+            </span>
+
+
+            <svg
+                class="sd-pulse"
+                viewBox="0 0 190 42"
+                aria-hidden="true"
+            >
+
+                <path
+                    d="
+                    M0 21
+                    H55
+                    L63 21
+                    L70 10
+                    L78 33
+                    L88 4
+                    L99 29
+                    L108 21
+                    H190
+                    "
+                />
+
+            </svg>
+
+        </div>
+
+
+        <div class="sd-intro-name">
+            DOÇ. DR. SERDAR DEMİR
+        </div>
+
+
+        <div class="sd-intro-specialty">
+            KARDİYOLOJİ
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header
+    class="header"
+    id="header"
+>
+
+    <div class="header-inner">
+
+
+        <a
+            href="#anasayfa"
+            class="brand"
+        >
+
+            <div class="brand-logo">
+                SD
+            </div>
+
+
+            <div class="brand-text">
+
+                <strong>
+                    Doç. Dr. Serdar Demir
+                </strong>
+
+                <span>
+                    Kardiyoloji
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav
+            class="nav"
+            id="nav"
+        >
+
+            <a href="#anasayfa">
+                Ana Sayfa
+            </a>
+
+            <a href="#hakkimda">
+                Hakkında
+            </a>
+
+            <a href="#uzmanlik">
+                Uzmanlık Alanları
+            </a>
+
+            <a href="#akademik">
+                Akademik
+            </a>
+
+            <a href="#bilgilendirme">
+                Hasta Bilgilendirme
+            </a>
+
+        </nav>
+
+
+        
+            <a class="professional-nav-link" href="#profesyonel" aria-label="Profesyonel alana giriş">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="6.5" y="10.5" width="11" height="8.5" rx="2"></rect>
+                    <path d="M9 10.5V8a3 3 0 0 1 6 0v2.5"></path>
+                </svg>
+                <span>Profesyonel</span>
+            </a>
+
+<a
+            href="#iletisim"
+            class="header-button"
+        >
+
+            İletişim / Kurum Bilgileri
+
+            <span>
+                →
+            </span>
+
+        </a>
+
+
+        <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Menüyü aç"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="anasayfa"
+>
+
+    <div class="hero-inner">
+
+
+        <div class="hero-content">
+
+
+            <div class="hero-label">
+
+                KARDİYOLOJİ · ELEKTROFİZYOLOJİ · ARİTMİ
+
+            </div>
+
+
+            <h1>
+
+                <span>
+                    Doç. Dr.
+                </span>
+
+                Serdar Demir
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Kalp ritim bozuklukları, elektrofizyoloji,
+                ablasyon ve kardiyak cihazlar alanında
+                klinik ve akademik çalışmalar.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+
+                <a
+                    href="#hakkimda"
+                    class="button button-dark"
+                >
+
+                    Hakkında
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#bilgilendirme"
+                    class="button button-light"
+                >
+
+                    Hasta Bilgilendirme
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="hero-affiliations">
+
+
+                <div class="affiliation">
+
+                    <div class="affiliation-icon">
+                        ◎
+                    </div>
+
+                    <p>
+
+                        Kartal Koşuyolu Yüksek İhtisas
+                        Eğitim ve Araştırma Hastanesi
+
+                    </p>
+
+                </div>
+
+
+                <div class="affiliation">
+
+                    <div class="affiliation-icon">
+                        ♙
+                    </div>
+
+                    <p>
+
+                        Sağlık Bilimleri Üniversitesi
+                        Kardiyoloji Anabilim Dalı
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ===============================================
+             HERO IMAGE
+             CARDIAC RHYTHM KUTUSU KALDIRILDI
+        ================================================ -->
+
+        <div class="hero-image-area">
+
+
+            <div class="hero-photo">
+
+                <img
+                    src="./images/serdar-demir.png"
+                    alt="Doç. Dr. Serdar Demir"
+                >
+
+            </div>
+
+
+            <div class="hero-quote">
+
+                <span class="quote-mark">
+                    “
+                </span>
+
+
+                <p>
+
+                    Kalp ritmini
+                    anlamak,
+                    doğru yaklaşımın
+                    ilk adımıdır.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HAKKINDA
+===================================================== -->
+
+<section
+    class="about section"
+    id="hakkimda"
+>
+
+    <div class="container">
+
+        <div class="about-grid">
+
+
+            <div class="about-content">
+
+
+                <div class="section-label">
+                    HAKKINDA
+                </div>
+
+
+                <h2>
+
+                    Klinik deneyim
+
+                    <br>
+
+                    ve akademik yaklaşım.
+
+                </h2>
+
+
+                <p>
+
+                    Doç. Dr. Serdar Demir, kardiyoloji alanında
+                    klinik ve akademik çalışmalarını sürdürmektedir.
+
+                    İstanbul Kartal Koşuyolu Yüksek İhtisas
+                    Eğitim ve Araştırma Hastanesi Kardiyoloji
+                    Kliniğinde Doçent Doktor ve Eğitim Görevlisi
+                    olarak görev yapmaktadır.
+
+                </p>
+
+
+                <p>
+
+                    Sağlık Bilimleri Üniversitesi Kardiyoloji
+                    Anabilim Dalı akademik kadrosunda yer almakta;
+                    kalp ritim bozuklukları, elektrofizyoloji ve
+                    kardiyak cihazlar alanlarında çalışmalar
+                    yürütmektedir.
+
+                </p>
+
+
+                <a
+                    href="#akademik"
+                    class="text-link"
+                >
+
+                    Akademik çalışmalar
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="about-images about-images-portrait">
+
+
+                <div class="about-image about-doctor about-doctor-whitecoat">
+
+                    <img
+                        src="./images/serdar-demir-beyaz-onluk.png"
+                        alt="Doç. Dr. Serdar Demir Kardiyoloji"
+                    >
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- =====================================================
+     UZMANLIK ALANLARI
+===================================================== -->
+
+<section class="expertise section" id="uzmanlik">
+
+    <div class="container">
+
+        <div class="expertise-heading">
+
+            <div>
+                <div class="section-label">
+                    UZMANLIK ALANLARI
+                </div>
+
+                <h2>
+                    Kalp ritmi ve girişimsel
+                    <br>
+                    elektrofizyoloji.
+                </h2>
+            </div>
+
+            <p>
+                Kalp ritim bozukluklarının değerlendirilmesi,
+                tanı süreçleri ve girişimsel tedavi yaklaşımları.
+            </p>
+
+        </div>
+
+
+        <div class="expertise-grid">
+
+            <article class="expertise-card">
+                <div class="expertise-card-top">
+                    <div class="expertise-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 25h8l4-10 7 20 6-16 4 6h9"/><path d="M7 12.5C11 8 18 8 24 14c6-6 13-6 17-1.5"/></svg></div>
+                    <span class="expertise-number">01</span>
+                </div>
+                <div class="expertise-card-content">
+                    <h3>Ritim Bozuklukları</h3>
+                    <p>Çarpıntı ve farklı aritmi türlerinin değerlendirilmesi ve takibi.</p>
+                </div>
+                <span class="expertise-line" aria-hidden="true"></span>
+            </article>
+
+            <article class="expertise-card">
+                <div class="expertise-card-top">
+                    <div class="expertise-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="6"/><path d="M24 3v6M24 39v6M3 24h6M39 24h6"/><path d="M24 18v6l5 3"/></svg></div>
+                    <span class="expertise-number">02</span>
+                </div>
+                <div class="expertise-card-content">
+                    <h3>Elektrofizyoloji</h3>
+                    <p>Kalbin elektriksel sisteminin elektrofizyolojik yöntemlerle incelenmesi.</p>
+                </div>
+                <span class="expertise-line" aria-hidden="true"></span>
+            </article>
+
+            <article class="expertise-card">
+                <div class="expertise-card-top">
+                    <div class="expertise-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 38c8-2 10-9 13-17 2-6 6-10 13-11"/><path d="M31 7l7 3-4 7"/><circle cx="20" cy="24" r="3.5"/><path d="M20 14v4M20 30v4M10 24h4M26 24h4"/></svg></div>
+                    <span class="expertise-number">03</span>
+                </div>
+                <div class="expertise-card-content">
+                    <h3>Kateter Ablasyonu</h3>
+                    <p>Uygun ritim bozukluklarında girişimsel ablasyon tedavilerinin planlanması.</p>
+                </div>
+                <span class="expertise-line" aria-hidden="true"></span>
+            </article>
+
+            <article class="expertise-card">
+                <div class="expertise-card-top">
+                    <div class="expertise-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 25c5-14 8 14 13 0s8 14 13 0 8 14 12 0"/><path d="M8 12h32M8 38h32"/></svg></div>
+                    <span class="expertise-number">04</span>
+                </div>
+                <div class="expertise-card-content">
+                    <h3>Atriyal Fibrilasyon</h3>
+                    <p>Atriyal fibrilasyonun değerlendirilmesi, takibi ve tedavi seçenekleri.</p>
+                </div>
+                <span class="expertise-line" aria-hidden="true"></span>
+            </article>
+
+            <article class="expertise-card">
+                <div class="expertise-card-top">
+                    <div class="expertise-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="13" y="8" width="22" height="27" rx="5"/><path d="M18 18h12M18 24h5"/><path d="M20 35v6c0 3 4 4 5 1 1-4-1-8 4-10"/></svg></div>
+                    <span class="expertise-number">05</span>
+                </div>
+                <div class="expertise-card-content">
+                    <h3>Kalp Pili</h3>
+                    <p>Kalp pili gereksiniminin değerlendirilmesi ve kardiyak cihaz takibi.</p>
+                </div>
+                <span class="expertise-line" aria-hidden="true"></span>
+            </article>
+
+            <article class="expertise-card">
+                <div class="expertise-card-top">
+                    <div class="expertise-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="8" width="24" height="30" rx="6"/><path d="M19 24h4l2-6 3 12 2-6h4"/><path d="M20 38v5M28 38v5"/></svg></div>
+                    <span class="expertise-number">06</span>
+                </div>
+                <div class="expertise-card-content">
+                    <h3>ICD &amp; CRT</h3>
+                    <p>İmplante edilebilir defibrilatör ve kardiyak resenkronizasyon cihazları.</p>
+                </div>
+                <span class="expertise-line" aria-hidden="true"></span>
+            </article>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BİLGİLENDİRME VİDEOSU
+===================================================== -->
+<section class="featured-video" id="video">
+    <div class="container">
+        <div class="featured-video-card">
+            <div class="featured-video-copy">
+                <div class="section-label">BİLGİLENDİRME VİDEOSU</div>
+                <h2>Kalp hastalıkları ve ritim bozukluklarının belirtileri nelerdir?</h2>
+                <p>Kalp hastalıkları ve ritim bozukluklarında görülebilen belirtiler hakkında Doç. Dr. Serdar Demir'in bilgilendirme videosu.</p>
+                <a class="featured-video-link" href="https://youtu.be/FXxJH4aHOOk" target="_blank" rel="noopener noreferrer">
+                    YouTube'da izle <span>↗</span>
+                </a>
+            </div>
+            <div class="featured-video-media premium-media">
+
+                <button class="premium-video-cover premium-video-cover-heart"
+                        type="button"
+                        data-video-id="FXxJH4aHOOk"
+                        aria-label="Kalp hastalıkları ve ritim bozuklukları videosunu oynat">
+                    <span class="cover-copy">
+                        <small>BİLGİLENDİRME VİDEOSU</small>
+                        <strong>Kalp hastalıkları ve<br>ritim bozuklukları</strong>
+                    </span>
+
+                    <svg class="medical-art heart-art" viewBox="0 0 560 315" aria-hidden="true">
+                        <defs>
+                            <radialGradient id="heartGlow" cx="62%" cy="46%" r="45%">
+                                <stop offset="0%" stop-color="#ffffff" stop-opacity=".95"/>
+                                <stop offset="45%" stop-color="#dcebf3" stop-opacity=".62"/>
+                                <stop offset="100%" stop-color="#8fb2c7" stop-opacity="0"/>
+                            </radialGradient>
+                            <linearGradient id="heartStroke" x1="0" x2="1">
+                                <stop offset="0%" stop-color="#a8c7d8"/>
+                                <stop offset="100%" stop-color="#eef7fb"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="390" cy="150" r="150" fill="url(#heartGlow)"/>
+                        <path class="ecg" d="M8 235 H112 l15-20 18 42 25-86 28 110 22-46 17 0 16-28 17 28 H552"/>
+                        <g class="heart-shape">
+                            <path d="M397 81c-25-35-78-25-91 12-18 51 43 103 91 140 48-37 109-89 91-140-13-37-66-47-91-12z"/>
+                            <path d="M397 89c-3 38 7 78 2 130"/>
+                            <path d="M361 102c20 24 31 53 37 88"/>
+                            <path d="M435 103c-19 23-30 52-36 87"/>
+                            <path d="M377 132c15 8 29 8 43 0"/>
+                            <path d="M367 163c20 10 40 10 61 0"/>
+                            <path d="M389 72c-8-24 3-45 18-58"/>
+                            <path d="M412 74c9-23 31-33 48-33"/>
+                            <path d="M374 79c-18-17-39-19-56-10"/>
+                        </g>
+                    </svg>
+
+                    <span class="premium-play" aria-hidden="true">
+                        <span></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <div class="featured-video-card featured-video-card-second">
+            <div class="featured-video-copy">
+                <div class="section-label">BİLGİLENDİRME VİDEOSU</div>
+                <h2>Karotid Sinüs aşırı hassasiyeti nasıl tedavi edilir?</h2>
+                <p>Karotid sinüs aşırı hassasiyetinin tedavi yaklaşımı hakkında Doç. Dr. Serdar Demir'in bilgilendirme videosu.</p>
+                <a class="featured-video-link" href="https://youtu.be/cf6SMPoHl74" target="_blank" rel="noopener noreferrer">
+                    YouTube'da izle <span>↗</span>
+                </a>
+            </div>
+            <div class="featured-video-media premium-media">
+
+                <button class="premium-video-cover premium-video-cover-carotid"
+                        type="button"
+                        data-video-id="cf6SMPoHl74"
+                        aria-label="Karotid sinüs aşırı hassasiyeti videosunu oynat">
+                    <span class="cover-copy">
+                        <small>BİLGİLENDİRME VİDEOSU</small>
+                        <strong>Karotid Sinüs<br>aşırı hassasiyeti</strong>
+                    </span>
+
+                    <svg class="medical-art carotid-art" viewBox="0 0 560 315" aria-hidden="true">
+                        <defs>
+                            <radialGradient id="neckGlow" cx="73%" cy="43%" r="55%">
+                                <stop offset="0%" stop-color="#f7fbfd" stop-opacity=".92"/>
+                                <stop offset="55%" stop-color="#b7cfdd" stop-opacity=".42"/>
+                                <stop offset="100%" stop-color="#7399b0" stop-opacity="0"/>
+                            </radialGradient>
+                            <linearGradient id="arteryStroke" x1="0" y1="1" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#b95858"/>
+                                <stop offset="48%" stop-color="#df7869"/>
+                                <stop offset="100%" stop-color="#f2b08f"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="425" cy="145" r="175" fill="url(#neckGlow)"/>
+                        <path class="neck-outline" d="M462 12c-20 42-23 79-6 111 16 30 31 43 32 77 0 35-18 72-54 111M374 9c14 37 15 72-1 101-17 31-37 53-38 92-1 38 16 76 47 109"/>
+                        <g class="arteries">
+                            <path d="M416 300c-4-45-3-82 5-117 8-36 17-59 19-88"/>
+                            <path d="M440 95c-5-24-2-46 8-67"/>
+                            <path d="M440 96c14-22 31-38 51-49"/>
+                            <path d="M402 300c-5-49-5-88 1-121 7-38 15-63 17-89"/>
+                            <path d="M420 91c-7-25-6-47 3-70"/>
+                            <path d="M420 92c-15-18-30-30-47-38"/>
+                        </g>
+                        <path class="ecg carotid-ecg" d="M5 247h78l12-14 14 29 20-62 23 80 17-33 18 0 14-21 15 21h337"/>
+                    </svg>
+
+                    <span class="premium-play" aria-hidden="true">
+                        <span></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =====================================================
+     KNOWLEDGE
+===================================================== -->
+
+<section class="knowledge section">
+
+    <div class="container knowledge-grid">
+
+
+        <!-- AKADEMİK -->
+
+        <div
+            class="academic"
+            id="akademik"
+        >
+
+
+            <div class="section-label">
+                AKADEMİK ÇALIŞMALAR
+            </div>
+
+
+            <h2>
+
+                Bilimsel çalışma ve
+                akademik katkı.
+
+            </h2>
+
+
+            <p>
+
+                Ulusal ve uluslararası bilimsel çalışmalarında
+                kardiyoloji, elektrofizyoloji, atriyal fibrilasyon
+                ve kateter ablasyonu alanları yer almaktadır.
+
+            </p>
+
+
+            <div class="publication-visual">
+
+
+                <div class="paper paper-one">
+
+                    <small>
+                        JOURNAL
+                    </small>
+
+                    <strong>
+                        CARDIOLOGY
+                    </strong>
+
+                </div>
+
+
+                <div class="paper paper-two">
+
+                    <small>
+                        RESEARCH
+                    </small>
+
+                    <strong>
+                        ELECTROPHYSIOLOGY
+                    </strong>
+
+                </div>
+
+
+                <div class="paper paper-three">
+
+                    <small>
+                        CLINICAL
+                    </small>
+
+                    <strong>
+                        HEART RHYTHM
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             HASTA BİLGİLENDİRME
+        ================================================== -->
+
+        <div
+            class="patient-information"
+            id="bilgilendirme"
+        >
+
+
+            <div class="section-label">
+                HASTA BİLGİLENDİRME
+            </div>
+
+
+            <h2>
+
+                Kalbiniz hakkında
+                merak ettikleriniz.
+
+            </h2>
+
+
+            <p class="patient-intro">
+
+                Sık karşılaşılan kardiyoloji ve ritim
+                konularını anlaşılır şekilde ele alan içerikler.
+
+            </p>
+
+
+            <div class="patient-cards">
+
+
+                <!-- RİTİM -->
+
+                <a
+                    href="./ritim-bozuklugu.html"
+                    class="patient-card"
+                >
+
+
+                    <div class="patient-image rhythm-image">
+
+
+                        <svg
+                            viewBox="0 0 400 100"
+                            preserveAspectRatio="none"
+                            aria-hidden="true"
+                        >
+
+                            <path
+                                d="
+                                M0 50
+                                L60 50
+                                L80 40
+                                L100 65
+                                L120 50
+                                L170 50
+                                L190 10
+                                L215 90
+                                L240 25
+                                L265 65
+                                L290 50
+                                L400 50
+                                "
+                            />
+
+                        </svg>
+
+
+                    </div>
+
+
+                    <div class="patient-card-bottom">
+
+
+                        <h3>
+
+                            Ritim bozukluğu
+                            nedir?
+
+                        </h3>
+
+
+                        <span>
+                            →
+                        </span>
+
+
+                    </div>
+
+
+                </a>
+
+
+                <!-- ABLASYON -->
+
+                <a
+                    href="./ablasyon.html"
+                    class="patient-card"
+                >
+
+
+                    <div class="patient-image ablation-image">
+
+                        <div class="mini-heart">
+                            ♥
+                        </div>
+
+                    </div>
+
+
+                    <div class="patient-card-bottom">
+
+
+                        <h3>
+
+                            Ablasyon
+                            nedir?
+
+                        </h3>
+
+
+                        <span>
+                            →
+                        </span>
+
+
+                    </div>
+
+
+                </a>
+
+
+                <!-- PACEMAKER -->
+
+                <a
+                    href="./kalp-pili.html"
+                    class="patient-card"
+                >
+
+
+                    <div class="patient-image pacemaker-image">
+
+
+                        <div class="pacemaker">
+
+                            <span></span>
+
+                            <i></i>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="patient-card-bottom">
+
+
+                        <h3>
+
+                            Kalp pili ile
+                            yaşam.
+
+                        </h3>
+
+
+                        <span>
+                            →
+                        </span>
+
+
+                    </div>
+
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     İLETİŞİM
+===================================================== -->
+
+<section
+    class="contact section"
+    id="iletisim"
+>
+
+    <div class="container">
+
+
+        <div class="section-label">
+            İLETİŞİM
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-main">
+
+
+                <h2>
+
+                    Kartal Koşuyolu
+
+                    <br>
+
+                    Yüksek İhtisas Eğitim ve
+                    Araştırma Hastanesi
+
+                </h2>
+
+
+                <div class="contact-information">
+
+
+                    <div class="contact-item">
+
+
+                        <span>
+                            ♡
+                        </span>
+
+
+                        <div>
+
+                            <small>
+                                BÖLÜM
+                            </small>
+
+                            <strong>
+                                Kardiyoloji
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+
+                        <span>
+                            ◎
+                        </span>
+
+
+                        <div>
+
+                            <small>
+                                KONUM
+                            </small>
+
+                            <strong>
+                                Cevizli, Kartal / İstanbul
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+
+                        <span>
+                            ♙
+                        </span>
+
+
+                        <div>
+
+                            <small>
+                                GÖREV
+                            </small>
+
+                            <strong>
+
+                                Doçent Doktor /
+                                Eğitim Görevlisi
+
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+
+                        <span>
+                            ▣
+                        </span>
+
+
+                        <div>
+
+                            <small>
+                                AKADEMİK KURUM
+                            </small>
+
+                            <strong>
+                                Sağlık Bilimleri Üniversitesi
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="contact-item contact-address">
+
+
+                        <span>
+                            ⌖
+                        </span>
+
+
+                        <div>
+
+                            <small>
+                                ADRES
+                            </small>
+
+                            <strong>
+
+                                Denizer Caddesi, Cevizli Kavşağı No:2,
+                                Cevizli / Kartal, İstanbul
+
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- REAL MAP -->
+
+            <div class="location-map-wrap">
+
+
+                <iframe
+                    src="https://www.google.com/maps?q=Ko%C5%9Fuyolu%20Y%C3%BCksek%20%C4%B0htisas%20E%C4%9Fitim%20ve%20Ara%C5%9Ft%C4%B1rma%20Hastanesi%2C%20Denizer%20Caddesi%20Cevizli%20Kav%C5%9Fa%C4%9F%C4%B1%20No%3A2%2C%20Cevizli%2C%20Kartal%2C%20%C4%B0stanbul&output=embed"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Kartal Koşuyolu Yüksek İhtisas Eğitim ve Araştırma Hastanesi konumu"
+                ></iframe>
+
+
+                <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=Ko%C5%9Fuyolu%20Y%C3%BCksek%20%C4%B0htisas%20E%C4%9Fitim%20ve%20Ara%C5%9Ft%C4%B1rma%20Hastanesi%2C%20Denizer%20Caddesi%20Cevizli%20Kav%C5%9Fa%C4%9F%C4%B1%20No%3A2%2C%20Kartal%2C%20%C4%B0stanbul"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="map-open-link"
+                >
+
+                    Haritada aç
+
+                    <span>
+                        ↗
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+            <div class="contact-action">
+
+                <p>
+
+                    Muayene ve hastane süreçleri için
+                    kurumun resmî iletişim kanallarını
+                    kullanabilirsiniz.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+
+        <a
+            href="#anasayfa"
+            class="footer-brand"
+        >
+
+
+            <div class="footer-logo">
+                SD
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Doç. Dr. Serdar Demir
+                </strong>
+
+                <span>
+                    Kardiyoloji
+                </span>
+
+            </div>
+
+
+        </a>
+
+
+        <nav class="footer-nav">
+
+
+            <a href="#anasayfa">
+                Ana Sayfa
+            </a>
+
+
+            <a href="#hakkimda">
+                Hakkında
+            </a>
+
+
+            <a href="#akademik">
+                Akademik
+            </a>
+
+
+            <a href="#bilgilendirme">
+                Hasta Bilgilendirme
+            </a>
+
+            <a href="#iletisim">
+                İletişim
+            </a>
+
+        </nav>
+
+        <div class="footer-note">
+            <p>Doç. Dr. Serdar Demir · Kardiyoloji</p>
+            <p>Bilgilendirme amaçlıdır.</p>
+        </div>
+
+    </div>
+
+
+        <div class="site-credit">
+            <span>Web Design</span>
+            <span class="site-credit-separator">—</span>
+            <span class="site-credit-name">Tarık Akar</span>
+        </div>
+
+    </footer>
+
+<!-- =====================================================
+     MEVCUT SCRIPT.JS
+===================================================== -->
+
+<script src="script.js"></script>
+
+
+<!-- =====================================================
+     SD INTRO
+===================================================== -->
+
+<script>
+
+    const sdIntro =
+        document.getElementById("sdIntro");
+
+
+    if (sdIntro) {
+
+        window.setTimeout(() => {
+
+            sdIntro.remove();
+
+        }, 3200);
+
+    }
+
+</script>
+
+
+<!-- =====================================================
+     MICRO ANIMATIONS
+===================================================== -->
+
+<script>
+
+(function () {
+
+
+    const reduceMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+
+
+    const revealElements =
+        document.querySelectorAll(
+
+            ".section-label," +
+
+            ".about-content h2," +
+
+            ".about-content p," +
+
+            ".academic h2," +
+
+            ".academic > p," +
+
+            ".patient-information h2," +
+
+            ".patient-intro," +
+
+            ".patient-card," +
+
+            ".contact-main h2," +
+
+            ".contact-item"
+
+        );
+
+
+
+    revealElements.forEach(
+        (element) => {
+
+            element.classList.add(
+                "reveal-on-scroll"
+            );
+
+        }
+    );
+
+
+
+    if (reduceMotion) {
+
+        revealElements.forEach(
+            (element) => {
+
+                element.classList.add(
+                    "is-visible"
+                );
+
+            }
+        );
+
+        return;
+
+    }
+
+
+
+    const revealObserver =
+        new IntersectionObserver(
+
+            (entries, observer) => {
+
+                entries.forEach(
+                    (entry) => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target
+                                .classList
+                                .add(
+                                    "is-visible"
+                                );
+
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    }
+                );
+
+            },
+
+            {
+
+                threshold:
+                    0.14,
+
+                rootMargin:
+                    "0px 0px -45px 0px"
+
+            }
+
+        );
+
+
+
+    revealElements.forEach(
+        (element) => {
+
+            revealObserver.observe(
+                element
+            );
+
+        }
+    );
+
+
+
+    const map =
+        document.querySelector(
+            ".location-map-wrap"
+        );
+
+
+    if (map) {
+
+        map.classList.add(
+            "map-visible"
+        );
+
+
+        const mapObserver =
+            new IntersectionObserver(
+
+                (entries, observer) => {
+
+                    entries.forEach(
+                        (entry) => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target
+                                    .classList
+                                    .add(
+                                        "map-visible"
+                                    );
+
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: .22
+                }
+
+            );
+
+
+        mapObserver.observe(
+            map
+        );
+
+    }
+
+
+})();
+
+</script>
+
+
+
+<script>
+document.addEventListener("click", function (event) {
+    const cover = event.target.closest(".premium-video-cover");
+    if (!cover) return;
+
+    const videoId = cover.dataset.videoId;
+    if (!videoId) return;
+
+    const media = cover.closest(".featured-video-media");
+    if (!media) return;
+
+    const iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube-nocookie.com/embed/" + videoId + "?autoplay=1&rel=0";
+    iframe.title = "Bilgilendirme videosu";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    iframe.allowFullscreen = true;
+
+    media.innerHTML = "";
+    media.appendChild(iframe);
+});
+</script>
+
+
+<style>
+#professionalOverlay{position:fixed;inset:0;z-index:999999;background:#f3f8fb;display:none}
+#professionalOverlay.active{display:block}
+#professionalClose{position:absolute;right:18px;top:12px;z-index:2;border:1px solid #ccdce6;background:white;color:#092944;border-radius:24px;padding:9px 16px;font:600 12px Arial;cursor:pointer}
+#professionalFrame{height:100%;width:100%;border:0;display:block}
+</style>
+<div id="professionalOverlay" role="dialog" aria-modal="true" aria-label="Profesyonel personel girişi">
+<button id="professionalClose" type="button" aria-label="Profesyonel alanı kapat">✕ Kapat</button>
+<iframe id="professionalFrame" title="Personel giriş ekranı" referrerpolicy="strict-origin-when-cross-origin" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;tr&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+&lt;title&gt;Profesyonel Alan | Doç. Dr. Serdar Demir&lt;/title&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;noindex,nofollow&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Libre+Caslon+Display&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+:root{font-family:&#x27;DM Sans&#x27;,Arial,sans-serif;color:#092944;background:#f3f8fb}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 85% 12%,#d9e9f1,transparent 36%),#f3f8fb}header{height:84px;background:#ffffffd9;border-bottom:1px solid #09294414;display:flex;align-items:center;justify-content:space-between;padding:0 max(6%,calc((100vw - 1180px)/2))}a{color:inherit;text-decoration:none}.brand{display:flex;align-items:center;gap:14px}.logo{width:44px;height:44px;border:1px solid #09294425;display:grid;place-items:center;font-family:Georgia,serif;font-size:23px}.brand strong{display:block;font-size:13px}.brand small{font-size:10px;color:#6a7d8b}.back{font-size:12px;color:#52697a}main{min-height:calc(100vh - 150px);display:grid;place-items:center;padding:65px 20px}.panel{width:min(100%,510px);padding:48px;background:#fff;border:1px solid #09294412;border-radius:15px;box-shadow:0 22px 70px #09294410}.eyebrow{font-size:10px;letter-spacing:2px;color:#53758c;font-weight:700}h1{font:normal clamp(34px,5vw,49px)/1.08 &#x27;Libre Caslon Display&#x27;,Georgia,serif;margin:15px 0}p{font-size:13px;color:#617789;line-height:1.8;margin:0 0 27px}.field{display:block;font-size:11px;font-weight:600;margin:20px 0 8px}input{width:100%;border:1px solid #cbd9e2;border-radius:8px;background:#fbfdfe;padding:14px 15px;font:inherit;font-size:13px;color:#092944}input:focus{outline:2px solid #a8c5d7;outline-offset:1px}button{border:0;border-radius:8px;background:#092944;color:white;width:100%;padding:15px;margin-top:24px;font:600 12px &#x27;DM Sans&#x27;,sans-serif;cursor:pointer}button:disabled{opacity:.6;cursor:wait}.secondary{background:#eaf2f6;color:#092944;margin-top:10px}.status{min-height:18px;margin-top:16px;font-size:12px;line-height:1.6;color:#a03a3a}.success{color:#21694d}.hidden{display:none!important}.divider{height:1px;background:#e2eaf0;margin:28px 0}.notice{padding:16px 18px;background:#f1f7fa;border-left:2px solid #315f7c;font-size:12px;color:#52697a;line-height:1.8}footer{text-align:center;padding:24px;font-size:10px;color:#80909a}@media(max-width:600px){header{padding:0 22px}.panel{padding:32px 25px}.back{font-size:10px}}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;&lt;a class=&quot;brand&quot; href=&quot;#anasayfa&quot; target=&quot;_parent&quot;&gt;&lt;span class=&quot;logo&quot;&gt;SD&lt;/span&gt;&lt;span&gt;&lt;strong&gt;Doç. Dr. Serdar Demir&lt;/strong&gt;&lt;small&gt;Kardiyoloji · Profesyonel Alan&lt;/small&gt;&lt;/span&gt;&lt;/a&gt;&lt;a class=&quot;back&quot; href=&quot;#anasayfa&quot; target=&quot;_parent&quot;&gt;← Ana Sayfaya Dön&lt;/a&gt;&lt;/header&gt;
+&lt;main&gt;
+&lt;section class=&quot;panel&quot; id=&quot;loginPanel&quot;&gt;&lt;div class=&quot;eyebrow&quot;&gt;YETKİLİ PERSONEL&lt;/div&gt;&lt;h1&gt;Profesyonel alan.&lt;/h1&gt;&lt;p&gt;Bu bölüm yalnızca yetkilendirilmiş personelin erişimi için ayrılmıştır.&lt;/p&gt;&lt;form id=&quot;loginForm&quot;&gt;&lt;label class=&quot;field&quot; for=&quot;email&quot;&gt;E-posta adresi&lt;/label&gt;&lt;input id=&quot;email&quot; type=&quot;email&quot; autocomplete=&quot;username&quot; required placeholder=&quot;personel@ornek.com&quot;&gt;&lt;label class=&quot;field&quot; for=&quot;password&quot;&gt;Şifre&lt;/label&gt;&lt;input id=&quot;password&quot; type=&quot;password&quot; autocomplete=&quot;current-password&quot; required placeholder=&quot;Şifreniz&quot;&gt;&lt;button id=&quot;loginButton&quot; type=&quot;submit&quot;&gt;Giriş yap →&lt;/button&gt;&lt;/form&gt;&lt;div class=&quot;status&quot; id=&quot;loginStatus&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;section class=&quot;panel hidden&quot; id=&quot;welcomePanel&quot;&gt;&lt;div class=&quot;eyebrow&quot;&gt;PERSONEL ERİŞİMİ&lt;/div&gt;&lt;h1&gt;Hoş geldiniz.&lt;/h1&gt;&lt;p id=&quot;accountLabel&quot;&gt;&lt;/p&gt;&lt;div class=&quot;notice&quot;&gt;&lt;strong&gt;Profesyonel içerik alanımız hazırlanıyor.&lt;/strong&gt;&lt;br&gt;Vaka özetleri, eğitim materyalleri ve akademik paylaşımlar yakında yetkili kullanıcıların erişimine sunulacaktır.&lt;/div&gt;&lt;div class=&quot;divider&quot;&gt;&lt;/div&gt;&lt;button class=&quot;secondary&quot; id=&quot;showChange&quot; type=&quot;button&quot;&gt;Şifremi değiştir&lt;/button&gt;&lt;button id=&quot;logout&quot; type=&quot;button&quot;&gt;Güvenli çıkış&lt;/button&gt;&lt;/section&gt;
+&lt;section class=&quot;panel hidden&quot; id=&quot;changePanel&quot;&gt;&lt;div class=&quot;eyebrow&quot;&gt;HESAP GÜVENLİĞİ&lt;/div&gt;&lt;h1&gt;Şifre değiştir.&lt;/h1&gt;&lt;p&gt;Hesabınız için yalnızca size ait güçlü bir şifre belirleyin.&lt;/p&gt;&lt;form id=&quot;changeForm&quot;&gt;&lt;label class=&quot;field&quot; for=&quot;newPassword&quot;&gt;Yeni şifre (en az 12 karakter)&lt;/label&gt;&lt;input id=&quot;newPassword&quot; type=&quot;password&quot; minlength=&quot;12&quot; autocomplete=&quot;new-password&quot; required&gt;&lt;label class=&quot;field&quot; for=&quot;confirmPassword&quot;&gt;Yeni şifre tekrar&lt;/label&gt;&lt;input id=&quot;confirmPassword&quot; type=&quot;password&quot; minlength=&quot;12&quot; autocomplete=&quot;new-password&quot; required&gt;&lt;button id=&quot;changeButton&quot; type=&quot;submit&quot;&gt;Yeni şifreyi kaydet&lt;/button&gt;&lt;/form&gt;&lt;div class=&quot;status&quot; id=&quot;changeStatus&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;&lt;button class=&quot;secondary&quot; id=&quot;cancelChange&quot; type=&quot;button&quot;&gt;Geri dön&lt;/button&gt;&lt;/section&gt;
+&lt;section class=&quot;panel hidden&quot; id=&quot;setupPanel&quot;&gt;&lt;div class=&quot;eyebrow&quot;&gt;KURULUM GEREKLİ&lt;/div&gt;&lt;h1&gt;Bağlantı bekleniyor.&lt;/h1&gt;&lt;p&gt;Giriş sisteminin çalışması için bu dosyanın sonundaki &lt;strong&gt;SUPABASE_URL&lt;/strong&gt; ve &lt;strong&gt;SUPABASE_PUBLISHABLE_KEY&lt;/strong&gt; alanlarını kendi projenizin herkese açık bağlantı bilgileriyle doldurun.&lt;/p&gt;&lt;/section&gt;
+&lt;/main&gt;&lt;footer&gt;© Doç. Dr. Serdar Demir · Yetkili erişim&lt;/footer&gt;
+&lt;script type=&quot;module&quot;&gt;
+import {createClient} from &#x27;https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm&#x27;;
+// SADECE Project URL ve publishable (veya legacy anon) key girin.
+// service_role, secret key veya veritabanı şifresini ASLA buraya yazmayın.
+const SUPABASE_URL = &#x27;https://fdperhawmaihcntidfql.supabase.co&#x27;;
+const SUPABASE_PUBLISHABLE_KEY = &#x27;sb_publishable_n-8h8poWT-Nf8iQbHj37Pw_XFgHKXhZ&#x27;;
+const $=id=&gt;document.getElementById(id);
+const panels=[&#x27;loginPanel&#x27;,&#x27;welcomePanel&#x27;,&#x27;changePanel&#x27;,&#x27;setupPanel&#x27;];
+function show(id){panels.forEach(p=&gt;$(p).classList.toggle(&#x27;hidden&#x27;,p!==id));}
+function status(id,message,ok=false){$(id).textContent=message;$(id).classList.toggle(&#x27;success&#x27;,ok);}
+const configured=SUPABASE_URL.startsWith(&#x27;https://&#x27;) &amp;&amp; !SUPABASE_URL.includes(&#x27;BURAYA_&#x27;) &amp;&amp; !SUPABASE_PUBLISHABLE_KEY.includes(&#x27;BURAYA_&#x27;);
+if(!configured){show(&#x27;setupPanel&#x27;);}else{
+ const supabase=createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+ async function refresh(){const {data:{user},error}=await supabase.auth.getUser();if(error||!user){show(&#x27;loginPanel&#x27;);return;} $(&#x27;accountLabel&#x27;).textContent=&#x27;Giriş yapan hesap: &#x27;+(user.email||&#x27;Personel&#x27;);show(&#x27;welcomePanel&#x27;);}
+ $(&#x27;loginForm&#x27;).addEventListener(&#x27;submit&#x27;,async e=&gt;{e.preventDefault();$(&#x27;loginButton&#x27;).disabled=true;status(&#x27;loginStatus&#x27;,&#x27;&#x27;);try{const {error}=await supabase.auth.signInWithPassword({email:$(&#x27;email&#x27;).value.trim(),password:$(&#x27;password&#x27;).value});if(error)throw error;$(&#x27;password&#x27;).value=&#x27;&#x27;;await refresh();}catch(err){status(&#x27;loginStatus&#x27;,&#x27;Giriş yapılamadı. E-posta adresini ve şifreni kontrol et.&#x27;);}finally{$(&#x27;loginButton&#x27;).disabled=false;}});
+ $(&#x27;logout&#x27;).addEventListener(&#x27;click&#x27;,async()=&gt;{await supabase.auth.signOut();show(&#x27;loginPanel&#x27;);});
+ $(&#x27;showChange&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{status(&#x27;changeStatus&#x27;,&#x27;&#x27;);show(&#x27;changePanel&#x27;);});
+ $(&#x27;cancelChange&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;show(&#x27;welcomePanel&#x27;));
+ $(&#x27;changeForm&#x27;).addEventListener(&#x27;submit&#x27;,async e=&gt;{e.preventDefault();if($(&#x27;newPassword&#x27;).value!==$(&#x27;confirmPassword&#x27;).value){status(&#x27;changeStatus&#x27;,&#x27;Şifreler eşleşmiyor.&#x27;);return;}$(&#x27;changeButton&#x27;).disabled=true;try{const {error}=await supabase.auth.updateUser({password:$(&#x27;newPassword&#x27;).value});if(error)throw error;$(&#x27;changeForm&#x27;).reset();status(&#x27;changeStatus&#x27;,&#x27;Şifreniz güncellendi.&#x27;,true);}catch(err){status(&#x27;changeStatus&#x27;,&#x27;Şifre güncellenemedi. Tekrar deneyin.&#x27;);}finally{$(&#x27;changeButton&#x27;).disabled=false;}});
+ await refresh();
+}
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+"></iframe>
+</div>
+<script>
+(function(){
+ const overlay=document.getElementById('professionalOverlay');
+ const close=document.getElementById('professionalClose');
+ function sync(){const active=location.hash==='#profesyonel';overlay.classList.toggle('active',active);document.body.style.overflow=active?'hidden':'';if(active)close.focus();}
+ close.addEventListener('click',()=>{history.replaceState(null,'',location.pathname+location.search+'#anasayfa');sync();});
+ window.addEventListener('hashchange',sync);sync();
+})();
+</script>
+<script>
+/* Reliable mobile navigation, including Instagram's in-app browser */
+(function(){
+ const btn=document.getElementById('mobileMenu');
+ const nav=document.getElementById('nav');
+ if(!btn||!nav)return;
+ btn.addEventListener('click',function(e){
+   e.preventDefault();e.stopImmediatePropagation();
+   const open=document.body.classList.toggle('mobile-nav-open');
+   btn.setAttribute('aria-expanded',String(open));
+   btn.setAttribute('aria-label',open?'Menüyü kapat':'Menüyü aç');
+ },true);
+ nav.addEventListener('click',function(e){
+   if(e.target.closest('a')){
+     document.body.classList.remove('mobile-nav-open');
+     btn.setAttribute('aria-expanded','false');
+   }
+ },true);
+ window.addEventListener('resize',function(){
+   if(innerWidth>850){document.body.classList.remove('mobile-nav-open');btn.setAttribute('aria-expanded','false');}
+ });
+ document.addEventListener('keydown',function(e){
+   if(e.key==='Escape'){document.body.classList.remove('mobile-nav-open');btn.setAttribute('aria-expanded','false');}
+ });
+})();
+</script>
+</body>
+
+</html>
