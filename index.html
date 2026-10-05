@@ -1862,8 +1862,57 @@ a, button { touch-action:manipulation; }
 }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 
+    /* Mobile: keep the introductory quote aligned beneath the portrait. */
+    @media (max-width: 850px) {
+      .hero-image-area .hero-quote {
+        position: relative !important;
+        inset: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        padding: 20px 22px !important;
+        margin: 0 !important;
+        transform: none !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+      }
+      .hero-image-area .hero-quote .quote-mark {
+        position: static !important;
+        display: block !important;
+        margin: 0 0 4px !important;
+        transform: none !important;
+        line-height: 1 !important;
+      }
+      .hero-image-area .hero-quote p {
+        width: 100% !important;
+        max-width: 34ch !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        font-size: clamp(15px, 4vw, 18px) !important;
+        line-height: 1.5 !important;
+        text-align: center !important;
+        overflow-wrap: normal !important;
+      }
+    }
     </style>
 
+<style>
+/* Professional link: subtle light-blue beacon */
+.professional-nav-link span {
+  animation: professionalBeacon 3.6s ease-in-out infinite;
+}
+@keyframes professionalBeacon {
+  0%, 18%, 48%, 100% { color: #31536a; text-shadow: none; opacity: .75; }
+  25%, 35% { color: #168fc4; text-shadow: 0 0 7px rgba(65,177,226,.75), 0 0 15px rgba(65,177,226,.35); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .professional-nav-link span { animation: none; }
+}
+</style>
 </head>
 
 
