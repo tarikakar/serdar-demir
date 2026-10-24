@@ -4286,3 +4286,29 @@ a.skip-to-content:focus, a.skip-to-content:focus-visible,
   .premium-hero-v9 .hero-buttons a,
   .premium-hero-v9 .hero-photo img { transition: none !important; }
 }
+
+
+/* V11 - Hareketli EKG: yalnızca hero arka planında */
+.hero#anasayfa { isolation: isolate; }
+.hero#anasayfa .sd-ambient-ecg {
+  position:absolute; inset:15% 0 auto; height:54%; width:100%;
+  z-index:0; pointer-events:none; overflow:hidden; opacity:.24;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);
+}
+.hero#anasayfa .sd-ambient-ecg svg { display:block; width:100%; height:100%; }
+.hero#anasayfa .sd-ecg-scroll {
+  fill:none; stroke:#4d9dc3; stroke-width:2.2;
+  stroke-linecap:round; stroke-linejoin:round;
+  filter:drop-shadow(0 0 3px rgba(72,155,200,.28));
+  animation:sd-ambient-travel 14s linear infinite;
+}
+@keyframes sd-ambient-travel { from {transform:translateX(0)} to {transform:translateX(-40%)} }
+.hero#anasayfa .hero-inner { position:relative; z-index:1; }
+@media(max-width:700px) {
+ .hero#anasayfa .sd-ambient-ecg { top:18%; height:38%; opacity:.13; }
+ .hero#anasayfa .sd-ecg-scroll { stroke-width:1.8; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .hero#anasayfa .sd-ecg-scroll {animation:none}
+}
